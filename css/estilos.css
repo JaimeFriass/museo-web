@@ -1,2 +1,63 @@
 
+/* AZUL GUAPO: 2AB9E7 */
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/BebasNeue-Regular.otf);
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+header {
+    background-color: #2AB9E7;
+    height: 150px;
+    color: white;
+    text-align: center;
+    font-family: 'bebas', sans-serif;
+    padding-bottom: 10px;
+    margin: -40px -10px 0px -10px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+}
+
+
+
+aside {
+    width: 29%;
+    float: left;
+    border-right: solid black;
+    padding-top: 100px;
+    border: solid black;
+}
+
+article {
+    width: 67%;
+    float: right;
+    padding-left: 20px;
+    border: solid black;
+}
+
+header h1 {
+    font-size: 50pt;
+    
+}
+
+header h2 {
+    font-size: 20pt;
+    line-height: 0.1;
+    margin-top: -45px;
+}
+
+footer {
+    padding: 100px 10px 10px 10px;
+    width: 100%;
+    text-align: center;
+    background-color: azure;
+    clear: both;
+}
+
+
   
