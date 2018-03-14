@@ -9,28 +9,39 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
+/* HEADER */
+
 header {
-    background-color: #2AB9E7;
+    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
     height: 120px;
     color: white;
     text-align: center;
     font-family: 'bebas', sans-serif;
-    padding-bottom: 10px;
     margin: -40px -10px 0px -10px;
-
 }
 
+header h1 {
+    font-size: 50pt;
+    
+}
+
+header h2 {
+    font-size: 20pt;
+    line-height: 0.1;
+    margin-top: -45px;
+}
 .menu {
     width: 100%;
     clear: both;
-    background-color: #2AB9E7;
+    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
 }
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 14px 14px 14px 14px;
-    background-color: #2AB9E7;
+    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
     width: 100%;
     margin-left: -10px;
     
@@ -46,6 +57,7 @@ header {
     text-decoration: none;
     background-color: #2AB9E7;
     color: white;
+    transition: 0.5s;
 }
 
 .menu li a:hover {
@@ -53,14 +65,26 @@ header {
     color: black;
 }
 
+.menu li a.active {
+    background-color: white;
+    color: black;
+}
+
+/* ASIDE */
 
 aside {
     width: 27%;
     float: left;
     border-right: solid black;
-    padding-top: 100px;
+    padding-top: 1px;
 }
 
+aside ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* ARTICLE */
 
 article {
     width: 67%;
@@ -68,21 +92,34 @@ article {
     padding-left: 20px;
 }
 
-header h1 {
-    font-size: 50pt;
-    
+div.galeria {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
 }
 
-header h2 {
-    font-size: 20pt;
-    line-height: 0.1;
-    margin-top: -45px;
+div.galeria:hover {
+    border: 1px solid #777;
 }
+
+div.galeria img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* FOOTER */
 
 footer {
-    padding: 100px 10px 10px 10px;
+    padding: 20px 10px 20px 10px;
     width: 100%;
     text-align: center;
+    font-size: 10pt;
     background-color: azure;
     clear: both;
 }
