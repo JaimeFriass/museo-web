@@ -10,6 +10,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+article h1 {
+    text-shadow: 2px 2px 1px #dddddd;
+}
+
 /* HEADER */
 
 header {
@@ -31,6 +35,25 @@ header h2 {
     line-height: 0.1;
     margin-top: -45px;
 }
+
+/* Cuando la pantalla es pequeña el titulo se hace mas
+    pequeño para poderse encajar    */
+@media only screen and (max-width: 500px) {
+
+    header {
+        height: 75px;
+        margin: -25px -10px 0px -10px;
+    }
+    header h1 {
+        font-size: 30pt;
+    }
+
+    header h2 {
+        margin-top: -19px;
+    }
+}
+
+
 .menu {
     width: 100%;
     clear: both;
@@ -73,9 +96,9 @@ header h2 {
 /* ASIDE */
 
 aside {
-    width: 27%;
+    width: 17%;
     float: left;
-    border-right: solid black;
+    
     padding-top: 1px;
 }
 
@@ -87,30 +110,84 @@ aside ul {
 /* ARTICLE */
 
 article {
-    width: 67%;
+    width: 82%;
     float: right;
     padding-left: 20px;
+    border-left: solid black;
 }
 
+
+@media only screen and (max-width: 1000px) {
+
+    aside {
+        width: 27%;
+    }
+
+    article {
+        width: 67%;
+    }
+}
+
+
+/* Cuando la pantalla es pequeña se oculta el aside y se le
+    da una anchura a "article" del 100% */
+@media only screen and (max-width: 700px) {
+    
+        aside {
+            width: 0%;
+            display: none;
+        }
+    
+        article {
+            width: 100%;
+        }
+}
+
+
+/* Galeria responsiva */
+
 div.galeria {
-    margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 180px;
+    text-align: center;
 }
 
 div.galeria:hover {
-    border: 1px solid #777;
+    border: 1px solid rgb(72, 196, 253);
 }
 
 div.galeria img {
-    width: 100%;
+    width: 95%;
     height: auto;
 }
 
 div.desc {
     padding: 15px;
-    text-align: center;
+    text-align: center; 
+}
+
+/* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
+.responsivo {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+/* Pantallas con max 1000px - Se muestran dos imagenes por fila */
+@media only screen and (max-width: 1000px) {
+    .responsivo {
+        width: 44.99999%;
+        margin: 6px 0;
+    }
+}
+
+/* Pantallas con max 500 - Se muestra una única imagen por fila */
+@media only screen and (max-width: 700px) {
+    .responsivo {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 /* FOOTER */
