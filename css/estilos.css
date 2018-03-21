@@ -165,6 +165,7 @@ article {
 }
 
 
+
 /* Galeria responsiva */
 
 div.galeria {
@@ -225,19 +226,36 @@ footer {
 
 /*Páginas de las obras*/
 
+article.obra {
+    width: 100%;
+}
+
+div.obra {
+    width: 70%;
+    margin-left: 15%;
+}
+
 div.imagen{
   float:left;
   margin: 10px,10px,10px,10px;
   text-align: center;
+
 }
 div.imagen img{
   width:30%;
   height:50%;
+  margin-bottom: 20px;
+  border: solid rgb(100, 100, 100) 2px;
+  border-radius: 7px;
 
 }
 
+div.imagen img:hover {
+    border: solid rgb(148, 148, 148) 2px;
+}
+
 div.texto{
-  margin: 10px,10px,10px,10px;
-  width: 80%;
-  text-align: center;
+  margin: 10px,10px,10px,12px;
+  margin-bottom: 50px;
+
 }
