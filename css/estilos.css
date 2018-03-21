@@ -48,15 +48,20 @@ header h2 {
     line-height: 0.1;
     margin-top: -45px;
     text-shadow: 1px 1px 1px #4d4d4d;
+    margin-left: 30%;
 }
 
 /* Cuando la pantalla es pequeña el titulo se hace mas
     pequeño para poderse encajar    */
 @media only screen and (max-width: 500px) {
 
+    div.cover {
+        height: 156px;
+    }
     header {
-        height: 75px;
-        margin: -25px -10px 0px -10px;
+        padding-top: 10px;
+        height: 101px;
+        margin: -25px -0px 0px -10px;
     }
     header h1 {
         font-size: 30pt;
@@ -92,7 +97,9 @@ header h2 {
 .menu li a {
     padding: 14px 14px 14px 14px;
     text-decoration: none;
-    background-color: #2AB9E7;
+    background-color: rgb(42, 185, 231, 0.5);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     color: white;
     transition: 0.5s;
 }
