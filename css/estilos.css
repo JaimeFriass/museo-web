@@ -18,16 +18,19 @@ article h1 {
 
 div.cover {
     background: url('../img/alhambra_dentro.jpg') no-repeat fixed;
+    height: 195px;
+    margin: -50px -10px 0px -10px;
 }
 
 header {
     
-    /*background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , #5bc9eb);*/
-    height: 120px;
+    background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , 
+    rgb(91, 201, 234, 0.75));
+    height: 150px;
     color: white;
     text-align: center;
     font-family: 'bebas', sans-serif;
-    margin: -40px -10px 0px -10px;
+    
 }
 
 header h1 {
@@ -64,14 +67,14 @@ header h2 {
 .menu {
     width: 100%;
     clear: both;
-    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
+    background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , 
+    rgb(91, 201, 234, 0.75));
 }
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 14px 14px 14px 14px;
-    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
     width: 100%;
     margin-left: -10px;
     
