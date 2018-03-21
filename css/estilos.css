@@ -16,8 +16,13 @@ article h1 {
 
 /* HEADER */
 
+div.cover {
+    background: url('../img/alhambra_dentro.jpg') no-repeat fixed;
+}
+
 header {
-    background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
+    
+    /*background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , #5bc9eb);*/
     height: 120px;
     color: white;
     text-align: center;
@@ -27,6 +32,7 @@ header {
 
 header h1 {
     font-size: 50pt;
+    text-shadow: 2px 2px 1px #5e5e5e;
     
 }
 
@@ -34,6 +40,7 @@ header h2 {
     font-size: 20pt;
     line-height: 0.1;
     margin-top: -45px;
+    text-shadow: 1px 1px 1px #4d4d4d;
 }
 
 /* Cuando la pantalla es pequeña el titulo se hace mas
@@ -110,7 +117,7 @@ aside ul {
 /* ARTICLE */
 
 article {
-    width: 82%;
+    width: 80%;
     float: right;
     padding-left: 20px;
     border-left: solid black;
@@ -120,11 +127,11 @@ article {
 @media only screen and (max-width: 1000px) {
 
     aside {
-        width: 27%;
+        width: 25%;
     }
 
     article {
-        width: 67%;
+        width: 71%;
     }
 }
 
@@ -169,6 +176,7 @@ div.desc {
 /* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
 .responsivo {
     padding: 0 6px;
+    margin-top: 10px;
     float: left;
     width: 24.99999%;
 }
