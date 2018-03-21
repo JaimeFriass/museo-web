@@ -27,7 +27,7 @@ header {
 
 header h1 {
     font-size: 50pt;
-    
+
 }
 
 header h2 {
@@ -67,7 +67,7 @@ header h2 {
     background: linear-gradient(to right, #2AB9E7 , #5bc9eb);
     width: 100%;
     margin-left: -10px;
-    
+
 }
 
 .menu li {
@@ -98,7 +98,7 @@ header h2 {
 aside {
     width: 17%;
     float: left;
-    
+
     padding-top: 1px;
 }
 
@@ -132,12 +132,12 @@ article {
 /* Cuando la pantalla es pequeña se oculta el aside y se le
     da una anchura a "article" del 100% */
 @media only screen and (max-width: 700px) {
-    
+
         aside {
             width: 0%;
             display: none;
         }
-    
+
         article {
             width: 100%;
         }
@@ -163,7 +163,7 @@ div.galeria img {
 
 div.desc {
     padding: 15px;
-    text-align: center; 
+    text-align: center;
 }
 
 /* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
@@ -202,4 +202,18 @@ footer {
 }
 
 
-  
+/*Páginas de las obras*/
+
+div.imagen{
+  float:left;
+  margin: 10px,10px,10px,10px;
+}
+div.imagen img{
+  width:20%;
+  height: 50%;
+}
+
+div.texto{
+  margin: 10px,10px,10px,10px;
+  width: 75%;
+}
