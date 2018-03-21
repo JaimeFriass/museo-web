@@ -213,19 +213,21 @@ footer {
     clear: both;
 }
 
-
 /*Páginas de las obras*/
 
 div.imagen{
   float:left;
   margin: 10px,10px,10px,10px;
+  text-align: center;
 }
 div.imagen img{
-  width:20%;
-  height: 50%;
+  width:30%;
+  height:50%;
+
 }
 
 div.texto{
   margin: 10px,10px,10px,10px;
-  width: 75%;
+  width: 80%;
+  text-align: center;
 }
