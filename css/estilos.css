@@ -18,8 +18,10 @@ article h1 {
 
 div.cover {
     background: url('../img/alhambra_dentro_grande.jpg') no-repeat fixed;
-    height: 195px;
+    height: 206px;
     margin: -50px -10px 0px -10px;
+    padding-bottom: 20px;
+    z-index: 1;
 }
 
 header {
@@ -30,17 +32,17 @@ header {
     color: white;
     text-align: center;
     font-family: 'bebas', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    z-index: 2;
     
 }
 
 header h1 {
     font-size: 50pt;
-
-
-
     text-shadow: 2px 2px 1px #5e5e5e;
-    
-
+    margin-top: 40px;
+    z-index: 4;
 }
 
 header h2 {
@@ -51,8 +53,67 @@ header h2 {
     margin-left: 30%;
 }
 
-/* Cuando la pantalla es pequeña el titulo se hace mas
-    pequeño para poderse encajar    */
+header img {
+    position: absolute;
+    left: 120px;
+    float: left;
+    height: 110px;
+    margin-top: 40px;
+    z-index: 3;
+}
+
+/* AJUSTES DEL HEADER PARA PANTALLAS MÁS PEQUEÑAS */
+/* Ordenadas de más grandes a pequeñas            */
+
+@media only screen and (max-width: 1000px) {
+    header img {
+        left: 70px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 46pt;
+        margin-left: 10%;
+    }
+
+    header h2 {
+        margin-top: -40px;
+        margin-left: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    header img {
+        left: 2px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 37pt;
+        margin-left: 30%;
+    }
+
+    header h2 {
+        margin-top: -30px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    header img {
+        left: 2px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 37pt;
+        margin-left: 30%;
+    }
+
+    header h2 {
+        margin-top: -30px;
+    }
+}
+
 @media only screen and (max-width: 500px) {
 
     div.cover {
@@ -70,115 +131,138 @@ header h2 {
     header h2 {
         margin-top: -19px;
     }
+
+    header img {
+        left: 2px;
+        height: 60px;
+    }
 }
 
 
-.menu {
-    width: 100%;
-    clear: both;
-    background-color:  RGBA(42, 185, 231, 0.70);
-    background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , 
-    rgb(91, 201, 234, 0.75));
-    
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 14px 14px 14px 14px;
-    width: 100%;
-    margin-left: -10px;
-
-}
-
-.menu li {
-    text-align: center;
-    display: inline;
-}
-
-.menu li:first-child {
-    margin-left: 20px;
-}
-
-.menu li a {
-    padding: 14px 14px 14px 14px;
-    text-decoration: none;
-    background-color: rgb(42, 185, 231, 0.5);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    color: white;
-    transition: 0.5s;
-}
-
-.menu li a:hover {
-    background-color: white;
-    color: black;
-}
-
-.menu li a.active {
-    background-color: white;
-    color: black;
-}
-
-/* ASIDE */
-aside {
-    width: 17%;
-    float: left;
-    padding-top: 20px;
-}
-
-aside ul {
-    margin: 0;
-    padding: 0;
-}
-aside li {
-    border-top: solid gray;
-}
-aside h2 {
-    text-transform: uppercase;
-    font-size: 15pt;
-}
-aside ul li h3 {
-    font-size: 12pt;
-}
-
-aside p {
-    margin-left: 8px;
-
-}
-
-p.dia {
-    font-style: italic;
-    color: rgb(77, 77, 77);
-
-}
-
-/* ARTICLE */
-article h1 {
-    text-transform: uppercase;
-}
-article {
-    width: 80%;
-    float: right;
-    padding-left: 20px;
-}
 
 
-@media only screen and (max-width: 1000px) {
+    .menu {
+        width: 100%;
+        clear: both;
+        background-color: RGBA(42, 185, 231, 0.70);
+        background: linear-gradient(to right, rgb(42, 185, 231, 0.70), rgb(91, 201, 234, 0.75));
+    }
 
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 14px 14px 14px 14px;
+            width: 100%;
+            margin-left: -10px;
+        }
+
+        .menu li {
+            text-align: center;
+            display: inline;
+        }
+
+            .menu li:first-child {
+                margin-left: 20px;
+            }
+
+            .menu li a {
+                padding: 14px 14px 14px 14px;
+                text-decoration: none;
+                background-color: rgba(42, 185, 231, 0.5);
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                color: white;
+                transition: 0.5s;
+            }
+
+                .menu li a:hover {
+                    background-color: white;
+                    color: black;
+                }
+
+                .menu li a.active {
+                    background-color: white;
+                    color: black;
+                }
+
+    /* ASIDE */
     aside {
-        width: 25%;
+        width: 17%;
+        float: left;
+        padding-top: 20px;
+    }
+
+        aside ul {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        aside h2 {
+            text-transform: uppercase;
+            font-size: 15pt;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: solid black 1.5px;
+        }
+
+        aside ul li h3 {
+            font-size: 12pt;
+        }
+
+        aside p {
+            margin-left: 8px;
+            line-height: 0.1;
+        }
+
+        aside a {
+            height: 5em;
+            margin-top: -10px;
+            text-decoration: none;
+            background-color: RGBA(42, 185, 231, 0.00);
+            color: black;
+            display: block;
+            border-radius: 5px;
+            transition: ease-in 0.2s;
+        }
+            aside a:hover {
+                background-color: RGBA(42, 185, 231, 0.10);
+            }
+
+    p.dia {
+        font-style: italic;
+        color: rgb(77, 77, 77);
+        font-size: 10pt;
+    }
+
+    /* ARTICLE */
+    article h1 {
+        text-transform: uppercase;
     }
 
     article {
-        width: 71%;
+        width: 80%;
+        float: right;
+        padding-left: 20px;
+        padding-bottom: 30px;
     }
-}
 
 
-/* Cuando la pantalla es pequeña se oculta el aside y se le
+    @media only screen and (max-width: 1000px) {
+
+        aside {
+            width: 25%;
+        }
+
+        article {
+            width: 71%;
+        }
+    }
+
+
+    /* Cuando la pantalla es pequeña se oculta el aside y se le
     da una anchura a "article" del 100% */
-@media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 700px) {
 
         aside {
             width: 0%;
@@ -188,114 +272,159 @@ article {
         article {
             width: 100%;
         }
-}
-
-
-
-/* Galeria responsiva */
-
-div.galeria {
-    border: 1px solid #ccc;
-    float: left;
-    text-align: center;
-}
-
-div.galeria:hover {
-    border: 1px solid rgb(72, 196, 253);
-}
-
-div.galeria img {
-    width: 100%;
-    height: auto;
-}
-
-div.desc {
-    padding: 15px;
-    text-align: center;
-    height: 2.5em;
-}
-
-/* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
-.responsivo {
-    padding: 0 6px;
-    margin-top: 10px;
-    float: left;
-    width: 22.88888%;
-}
-
-/* Pantallas con max 1000px - Se muestran dos imagenes por fila */
-@media only screen and (max-width: 1000px) {
-    .responsivo {
-        width: 44.99999%;
-        margin: 6px 0;
     }
+
+
+
+    /* Galeria responsiva */
+
+    div.galeria {
+        border: 1px solid #ccc;
+        float: left;
+        text-align: center;
+    }
+
+        div.galeria:hover {
+            border: 1px solid rgb(72, 196, 253);
+        }
+
+        div.galeria img {
+            width: 100%;
+            height: auto;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+        height: 2.5em;
+    }
+
+    /* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
+    .responsivo {
+        padding: 0 6px;
+        margin-top: 10px;
+        float: left;
+        width: 22.88888%;
+    }
+
+    /* Pantallas con max 1000px - Se muestran dos imagenes por fila */
+    @media only screen and (max-width: 1000px) {
+        .responsivo {
+            width: 44.99999%;
+            margin: 6px 0;
+        }
+    }
+
+    /* Pantallas con max 500 - Se muestra una única imagen por fila */
+    @media only screen and (max-width: 700px) {
+        .responsivo {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        article h1 {
+            margin-left: 5%;
+        }
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 20px 10px 20px 10px;
+        width: 100%;
+        margin-left: -10px;
+        margin-bottom: -10px;
+        text-align: center;
+        font-size: 10pt;
+        background-color: azure;
+        clear: both;
+    }
+
+    /*Páginas de las obras*/
+
+    article.obra {
+        width: 100%;
+        background: url('../img/patio.jpg') no-repeat fixed;
+    }
+
+    div.fondo_obra {
+        margin-top: -20px;
+        background-color: rgba(244, 250, 252, 0.938);
+        margin-bottom: -30px;
+    }
+
+    div.obra {
+        padding-top: 20px;
+        padding-bottom: 100px;
+        width: 70%;
+        margin-top: 20px;
+        margin-left: 15%;
+    }
+
+    div.imagen {
+        margin: 10px,10px,10px,10px;
+        text-align: center;
+        border-bottom: solid black 1px;
+    }
+
+        div.imagen img {
+            width: 30%;
+            height: 50%;
+            margin-bottom: 20px;
+            border: solid rgb(100, 100, 100) 2px;
+            border-radius: 7px;
+        }
+
+            div.imagen img:hover {
+                border: solid rgb(148, 148, 148) 2px;
+            }
+
+    div.texto {
+        margin: 10px,10px,10px,12px;
+        margin-bottom: 50px;
+    }
+
+    /* BOTONES */
+a.boton {
+    display: inline-block;
+    background-color: #2AB9E7;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    width: 26%;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    transition: 0.2s;
+    text-shadow: 1px 1px gray;
 }
 
-/* Pantallas con max 500 - Se muestra una única imagen por fila */
+    a.boton:hover {
+        background-color: white;
+        color: black;
+    }
+
 @media only screen and (max-width: 700px) {
-    .responsivo {
-        width: 80%;
-        margin-left: 10%;   
-        margin-right: 10%;
+
+    a.boton {
+        width: 100%;
     }
 
-    article h1 {
-        margin-left: 5%;
+    div.obra {
+        padding-bottom: 180px;
     }
 }
 
-/* FOOTER */
+    /* PARA IMPRIMIR*/
 
-footer {
-    padding: 20px 10px 20px 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 10pt;
-    background-color: azure;
-    clear: both;
-}
+    div.fondo_obra_imprimir {
+        margin-top: -20px;
+        margin-bottom: -30px;
+    }
 
-/*Páginas de las obras*/
-
-article.obra {
-    width: 100%;
-    background: url('../img/patio.jpg') no-repeat fixed;
-
-}
-div.fondo_obra {
-    margin-top: -20px;
-    background-color: rgba(244, 250, 252, 0.938);
-}
-
-div.obra {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 70%;
-    margin-top: 20px;
-    margin-left: 15%;
-}
-
-div.imagen{
-
-  margin: 10px,10px,10px,10px;
-  text-align: center;
-
-}
-div.imagen img{
-  width:30%;
-  height:50%;
-  margin-bottom: 20px;
-  border: solid rgb(100, 100, 100) 2px;
-  border-radius: 7px;
-
-}
-
-div.imagen img:hover {
-    border: solid rgb(148, 148, 148) 2px;
-}
-
-div.texto{
-  margin: 10px,10px,10px,12px;
-  margin-bottom: 50px;
-
-}
+    article.sin_fondo {
+        width: 100%;
+    }
