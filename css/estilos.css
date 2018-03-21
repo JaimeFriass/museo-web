@@ -17,13 +17,13 @@ article h1 {
 /* HEADER */
 
 div.cover {
-    background: url('../img/alhambra_dentro.jpg') no-repeat fixed;
+    background: url('../img/alhambra_dentro_grande.jpg') no-repeat fixed;
     height: 195px;
     margin: -50px -10px 0px -10px;
 }
 
 header {
-    
+    background-color:  RGBA(42, 185, 231, 0.70);
     background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , 
     rgb(91, 201, 234, 0.75));
     height: 150px;
@@ -76,8 +76,10 @@ header h2 {
 .menu {
     width: 100%;
     clear: both;
+    background-color:  RGBA(42, 185, 231, 0.70);
     background: linear-gradient(to right, rgb(42, 185, 231, 0.70) , 
     rgb(91, 201, 234, 0.75));
+    
 }
 
 .menu ul {
@@ -92,6 +94,10 @@ header h2 {
 .menu li {
     text-align: center;
     display: inline;
+}
+
+.menu li:first-child {
+    margin-left: 20px;
 }
 
 .menu li a {
@@ -115,26 +121,46 @@ header h2 {
 }
 
 /* ASIDE */
-
 aside {
     width: 17%;
     float: left;
-
-    padding-top: 1px;
+    padding-top: 20px;
 }
 
 aside ul {
     margin: 0;
     padding: 0;
 }
+aside li {
+    border-top: solid gray;
+}
+aside h2 {
+    text-transform: uppercase;
+    font-size: 15pt;
+}
+aside ul li h3 {
+    font-size: 12pt;
+}
+
+aside p {
+    margin-left: 8px;
+
+}
+
+p.dia {
+    font-style: italic;
+    color: rgb(77, 77, 77);
+
+}
 
 /* ARTICLE */
-
+article h1 {
+    text-transform: uppercase;
+}
 article {
     width: 80%;
     float: right;
     padding-left: 20px;
-    border-left: solid black;
 }
 
 
@@ -179,13 +205,14 @@ div.galeria:hover {
 }
 
 div.galeria img {
-    width: 95%;
+    width: 100%;
     height: auto;
 }
 
 div.desc {
     padding: 15px;
     text-align: center;
+    height: 2.5em;
 }
 
 /* Resto de pantallas - Se muestran hasta cuatro imágenes por fila */
@@ -193,7 +220,7 @@ div.desc {
     padding: 0 6px;
     margin-top: 10px;
     float: left;
-    width: 24.99999%;
+    width: 22.88888%;
 }
 
 /* Pantallas con max 1000px - Se muestran dos imagenes por fila */
@@ -208,8 +235,12 @@ div.desc {
 @media only screen and (max-width: 700px) {
     .responsivo {
         width: 80%;
-        margin-left: 10%;
+        margin-left: 10%;   
         margin-right: 10%;
+    }
+
+    article h1 {
+        margin-left: 5%;
     }
 }
 
@@ -228,15 +259,24 @@ footer {
 
 article.obra {
     width: 100%;
+    background: url('../img/patio.jpg') no-repeat fixed;
+
+}
+div.fondo_obra {
+    margin-top: -20px;
+    background-color: rgba(244, 250, 252, 0.938);
 }
 
 div.obra {
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 70%;
+    margin-top: 20px;
     margin-left: 15%;
 }
 
 div.imagen{
-  float:left;
+
   margin: 10px,10px,10px,10px;
   text-align: center;
 
