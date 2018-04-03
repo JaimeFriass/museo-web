@@ -196,6 +196,7 @@ header img {
         color: black;
         box-shadow: gray 1px 1px;
         transition: 0.5s;
+        cursor: pointer;
     }
     
     .btn_comentarios:hover {
@@ -205,11 +206,11 @@ header img {
     .comentarios {
         position: fixed;
         bottom: 20px;
-        right: 0px;
+        right: -300px;
         border-radius: 4px;
-        height: 300px;
+        height: 340px;
         width: 300px;
-        background-color:rgb(161, 218, 236);
+        background-color:rgba(161, 218, 236, 0.9);
         border: solid black 1px;
         padding: 10px 10px 10px 10px;
     }
@@ -223,18 +224,62 @@ header img {
         border-bottom: solid black 1px;
     }
 
+    .mensaje {
+        line-height: 0.5;
+    }
+    p.fecha_com {
+        text-align: right;
+        margin-top: -23px;
+        color: gray;
+    }
+
+    p.nombre_com {
+        font-family: 'bebas', sans-serif;
+        font-size: 14pt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
     input {
-        padding: 4px 4px;
+        padding: 7px 7px;
         margin: 2px 0;
         box-sizing: border-box;
+        border-radius: 4px;
+        border: solid #ccc 1px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;   
+        font-family: 'Raleway', sans-serif;
+        margin-top: 5px;
+    }
+
+    input:focus {
+        border: 1px solid #555;
+    }
+
+    input[type=submit] {
+        text-decoration: none;
+        padding: 5px 20px 5px 20px;
+        background-color: #2AB9E7;
+        text-shadow: 1px 1px gray;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    input[type=submit]:hover {
+        background-color: white;
+        color: black;
     }
 
     input.texto_comentario {
         width: 100%;
     }
 
+    input.nombre {
+        width: 49%;
+    }
+
     div.container_comentarios {
-        height: 120px;
+        height: 180px;
     }
     p.com {
         line-height: 0.3;
@@ -243,6 +288,7 @@ header img {
     form.escribir {
         border-top: solid black 1px;
         margin-bottom: 0px;
+        padding-top: 5px;
     }
 
 
