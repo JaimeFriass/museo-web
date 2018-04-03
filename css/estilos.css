@@ -185,6 +185,68 @@ header img {
                     color: black;
                 }
 
+    .btn_comentarios {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        background-color: rgb(161, 218, 236);   
+        color: black;
+        box-shadow: gray 1px 1px;
+        transition: 0.5s;
+    }
+    
+    .btn_comentarios:hover {
+        background-color: white;
+    }
+
+    .comentarios {
+        position: fixed;
+        bottom: 20px;
+        right: 0px;
+        border-radius: 4px;
+        height: 300px;
+        width: 300px;
+        background-color:rgb(161, 218, 236);
+        border: solid black 1px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .header_comentarios {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 18pt;
+        color: black;
+        font-family: 'bebas', sans-serif;
+        border-bottom: solid black 1px;
+    }
+
+    input {
+        padding: 4px 4px;
+        margin: 2px 0;
+        box-sizing: border-box;
+    }
+
+    input.texto_comentario {
+        width: 100%;
+    }
+
+    div.container_comentarios {
+        height: 120px;
+    }
+    p.com {
+        line-height: 0.3;
+    }
+
+    form.escribir {
+        border-top: solid black 1px;
+        margin-bottom: 0px;
+    }
+
+
+
     /* ASIDE */
     aside {
         width: 17%;

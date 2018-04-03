@@ -6,6 +6,7 @@
     <title>Alabastrón</title>
     <meta charset="utf-8">
     <script src="funciones.js"></script>
+    <script src="js/jquery.js"></script>
 </head>
 <body>
   <div class="cover">
@@ -21,6 +22,25 @@
             <li><a href="">Horarios</a></li>
             <li><a href="">Contacto</a></li>
         </ul>
+    </div>
+
+    <a onclick="mostrarComentarios" class="btn_comentarios" id="boton_comentarios">
+         +
+    </a>
+
+    <div class="comentarios" id="comentarios">
+        <h3 class="header_comentarios">Comentarios</h3>
+        <div class="container_comentarios">
+            <p class="com"><b>Pedro</b>: Ps a mi no me gusta</p>
+            <p class="com"><b>Antonio</b>: y a ti quien te ha preguntado</p>
+        </div>
+
+        <form class="escribir">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="E-mail">
+            <input class="texto_comentario" type="text" placeholder="Comentario">
+            <input type="submit" value="Enviar">
+        </form>
     </div>
 
 
@@ -64,9 +84,16 @@
 
     <footer>
             <b>&copy; Museo Arqueológico de Granada</b><br>
-        Sistemas de Información Basados en Web<br>
+        Sistemas de Información Basados en Web<br>  
         Curso 2017-18
     </footer>
+    <script>
+        // Añadimos la funcionalidad de clickear el boton de comentarios
+        document.getElementById("boton_comentarios").addEventListener("click", mostrarComentarios); 
+        //document.getElementById("comentarios").style.display = 'none'; 
+        document.getElementById("comentarios").hidden = 'true';
+    </script>
 
 </body>
+
 </html>
