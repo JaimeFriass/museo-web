@@ -14,6 +14,7 @@ function cambiartabu(text1){
     }
 
   }
+ returt tex;
 }
 
 </script>
