@@ -1,16 +1,22 @@
-
+<script>
+ 
 var tabu = ["CACA","FEO","HORRIBLE","ABURRIDO"];
-var sust = ["****","***","********","********"];
-
 
 function cambiartabu(text1){
   var text=text1.toUpperCase();
   flen = tabu.length;
   for(i = 0; i < flen; i++){
-    if(text == tabu[i])
-      text.replace(/tabu[i]/g,sust[i]);//la g es para cada vez que salga la palabra
+    if(text == tabu[i]){
+      var sust="";
+      for(i = 0; i < tabu[i].length; i++)
+        sust = sust + "*";
+      text.replace(/tabu[i]/g,sust);//la g es para cada vez que salga la palabra
+    }
+   returt tex;
   }
-}
+
+
+
 
 function mostrarComentarios() {
 
@@ -26,9 +32,6 @@ function mostrarComentarios() {
     } else {
       pos = pos + 5;
       e.style.right = pos + 'px';   // Se modifica el atributo left del elemento
-    }
-  }
-
 }
 
 function validarForm() {
@@ -57,3 +60,5 @@ function validarForm() {
 
   return false; // Para que no se actualice la pagina actual
 }
+
+</script>
