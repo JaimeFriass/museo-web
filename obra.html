@@ -30,15 +30,13 @@
 
     <div class="comentarios" id="comentarios">
         <h3 class="header_comentarios">Comentarios</h3>
-        <div class="container_comentarios">
-            <p class="com"><b>Pedro</b>: Ps a mi no me gusta</p>
-            <p class="com"><b>Antonio</b>: y a ti quien te ha preguntado</p>
+        <div id="lista_comentarios" class="container_comentarios">
         </div>
 
-        <form class="escribir">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="E-mail">
-            <input class="texto_comentario" type="text" placeholder="Comentario">
+        <form name="comentar" class="escribir" onsubmit="return validarForm()">
+            <input type="text" name="nombre" class="nombre" placeholder="Nombre">
+            <input type="text" name="e-mail" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
+            <input required="true" name="mensaje" class="texto_comentario" type="text" placeholder="Comentario">
             <input type="submit" value="Enviar">
         </form>
     </div>
