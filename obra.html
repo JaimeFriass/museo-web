@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <script src="funciones.js"></script>
     <script src="js/jquery.js"></script>
+    <script defer src="js/fontawesome-all.js"></script>
 </head>
 <body>
   <div class="cover">
@@ -25,12 +26,14 @@
     </div>
 
     <a onclick="mostrarComentarios" class="btn_comentarios" id="boton_comentarios">
-         +
+         <i id="icono_boton" class="fas fa-comments fa-2x"></i>
     </a>
 
     <div class="comentarios" id="comentarios">
-        <h3 class="header_comentarios">Comentarios</h3>
+        <h3 class="header_comentarios">Comentarios</h3><h3 id="boton_cerrar" class="cerrar">x</h3>
         <div id="lista_comentarios" class="container_comentarios">
+            <div class='mensaje'><p class='nombre_com'><b>Paco</b></p><p class='fecha_com' >4/3/2018 14:22</p><p>Me parece interesante</p></div>
+            <div class='mensaje'><p class='nombre_com'><b>Antonio</b></p><p class='fecha_com' >4/3/2018 14:37</p><p>A mi igual</p></div>
         </div>
 
         <form name="comentar" class="escribir" onsubmit="return validarForm()">
@@ -88,6 +91,7 @@
     <script>
         // Añadimos la funcionalidad de clickear el boton de comentarios
         document.getElementById("boton_comentarios").addEventListener("click", mostrarComentarios); 
+        document.getElementById("boton_cerrar").addEventListener("click", ocultarComentarios); 
         //document.getElementById("comentarios").style.display = 'none'; 
         document.getElementById("comentarios").hidden = 'true';
     </script>

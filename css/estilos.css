@@ -215,6 +215,11 @@ header img {
         padding: 10px 10px 10px 10px;
     }
 
+    #icono_boton {
+        margin-top: 11px;
+        margin-left: 11px;
+    }
+
     .header_comentarios {
         margin-top: 0px;
         margin-bottom: 0px;
@@ -224,20 +229,29 @@ header img {
         border-bottom: solid black 1px;
     }
 
-    .mensaje {
-        line-height: 0.5;
+    .cerrar {
+        text-align: right;
+        margin-top: -30px;
+        margin-right: 10px;
+        cursor: pointer;
     }
+
+    .mensaje {
+        line-height: 0.3;
+    }
+
     p.fecha_com {
         text-align: right;
         margin-top: -23px;
         color: gray;
+        font-size: 10pt;
     }
 
     p.nombre_com {
         font-family: 'bebas', sans-serif;
-        font-size: 14pt;
+        font-size: 12pt;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
     input {
         padding: 7px 7px;
