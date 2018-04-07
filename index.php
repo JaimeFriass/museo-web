@@ -19,5 +19,7 @@ include "header.php";
         $resultado = mysql_query ($seleccion, $conexion);   //ejecuta la sentencia y devuelve un resultado
         //Ahora tenemos que redirigir la página
     }
+    else
+        echo "ERROR: 404 página no encontrada, id incorrecto";
 
 ?>
