@@ -7,8 +7,8 @@
 
     <div class="menu">
         <ul>
-            <li ><a href="principal.html">Inicio</a></li>
-            <li><a class="active" href="">Obras</a></li>
+            <li ><a <?php if($menu_activo == 1) {?>class="active" <?php } ?> href="index.php">Inicio</a></li>
+            <li><a <?php if($menu_activo == 2) {?>class="active" <?php } ?> href="">Obras</a></li>
             <li><a href="">Horarios</a></li>
             <li><a href="">Contacto</a></li>
         </ul>
