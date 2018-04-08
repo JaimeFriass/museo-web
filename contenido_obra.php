@@ -1,7 +1,24 @@
+<?
+function array_recibe($url_array) {
+    $tmp = stripslashes($url_array);
+    $tmp = urldecode($tmp);
+    $tmp = unserialize($tmp);
+
+   return $tmp;
+}
+
+
+$array=$_GET['array_env'];
+
+
+$array=array_recibe($array);
+
+?>
+
 <article class="obra">
         <div class="fondo_obra">
             <div class="obra">
-                <h1><?php echo $titulo_obra; ?></h1>
+                <h1> <?php echo $array("nombre"); ?></h1>
 
                 <div class="imagen">
                     <img src="img/alabastron.jpg" alt="Alabastron">
@@ -35,3 +52,4 @@
             </div>
         </div>
       </article>
+

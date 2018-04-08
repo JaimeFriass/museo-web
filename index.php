@@ -1,5 +1,5 @@
 <?php
-include "head.php";
+include ("head.php");
 
 
 
@@ -26,6 +26,31 @@ include "head.php";
             */
             //Ahora tenemos que redirigir la página
             header("Location: obra.php?id=".$id_url);
+
+            function array_envia($array) {
+            
+                $tmp = serialize($array);
+                $tmp = urlencode($tmp);
+            
+                return $tmp;
+            }
+            
+            $seleccion = 'SELECT  *  FROM  Obras Where Obras.id == id_url' ; //sentencia en sql 
+            $resultado = mysqli_query ($conexion, $seleccion);   //ejecuta la sentencia y devuelve un resultado
+
+            $array_resultado = msqli_fetch_array($resultado); // Pasamos el resultado a un array para extraer el idç
+            
+            $array_env = array_envia($array_resultado);
+            
+            // Usando un formulario y campo hidden.
+            
+            /*<form action="contenido_obra.php" method="POST">
+               <input name="array" type="hidden" value="$array_env">
+               <input name="enviar" type="submit" value=" Enviar ">
+            </form>*/
+            echo "<a href=\"contenido_obra.php?array=$array_env\">pasar array</a>";
+            
+
         }
         else
             echo "ERROR: 404 página no encontrada, id incorrecto";
@@ -33,7 +58,7 @@ include "head.php";
     // Si no se le ha pasado un id de una obra en la URL se muestra la página por defecto
     } else {
         $menu_activo = 1;
-        include "header.php";
+        include ("header.php");
 ?>
 
 <body>
