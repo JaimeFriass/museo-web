@@ -11,7 +11,7 @@ include "head.php";
     } 
     
     // Si se le ha pasado un id de una obra en la URL:
-    if (isset($id_url)) {
+    if (isset($_GET['id'])) {
         $id_url = $_GET['id'] ;
 
         if( $id_url <= 8 && $id_url > 0){
