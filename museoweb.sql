@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2018 a las 16:38:26
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.3
+-- Tiempo de generación: 11-04-2018 a las 19:23:57
+-- Versión del servidor: 10.1.29-MariaDB
+-- Versión de PHP: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `museoweb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `nom_com` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `id_com` int(11) NOT NULL,
+  `texto_com` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `obra_com` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -55,6 +70,12 @@ INSERT INTO `obras` (`Nombre`, `id`, `fecha`, `dimensiones`, `procedencia`, `com
 --
 
 --
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_com`);
+
+--
 -- Indices de la tabla `obras`
 --
 ALTER TABLE `obras`
@@ -64,6 +85,12 @@ ALTER TABLE `obras`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_com` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `obras`
