@@ -462,8 +462,9 @@ header img {
         background-color: azure;
         clear: both;
     }
-
-    /*Páginas de las obras*/
+    /***************************************/
+    /*                OBRA                 */
+    /***************************************/
 
     article.obra {
         width: 100%;
@@ -504,6 +505,11 @@ header img {
     div.texto {
         margin: 10px,10px,10px,12px;
         margin-bottom: 50px;
+    }
+
+    div.video {
+        text-align: center;
+        width: 100%;
     }
 
     /* BOTONES */
@@ -549,3 +555,22 @@ a.boton {
     article.sin_fondo {
         width: 100%;
     }
+
+    /***************************************/
+    /*         COLECCIONES                 */
+    /***************************************/
+
+    a.nom_col {
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+        transition: 0.5s;
+        display: block;
+        padding: 10px 10px 10px 10px;
+    }
+
+    a.nom_col:hover {
+        background-color: rgb(219, 247, 255);
+    }
+    
+    

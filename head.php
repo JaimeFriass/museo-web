@@ -1,7 +1,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <title>Alabastrón</title>
+    <title><?php echo $titulo_pag; ?></title>
     <meta charset="utf-8">
     <script src="funciones.js"></script>
     <script src="js/jquery.js"></script>

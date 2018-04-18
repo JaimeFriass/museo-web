@@ -85,11 +85,7 @@ function cambiarTabu3(frase_original) {
   return frase;
 }
 
-
-
-
 function mostrarComentarios() {
-
   var e = document.getElementById("comentarios");
   var boton = document.getElementById("boton_comentarios");
   boton.hidden = true;
@@ -137,6 +133,5 @@ function validarForm() {
                             +fecha_form +"</p><p>"+comentario+"</p></div>";
 
   }
-
   return false; // Para que no se actualice la pagina actual
 }
