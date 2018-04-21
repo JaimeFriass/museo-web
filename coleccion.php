@@ -45,5 +45,6 @@ include "header.php";
             </ul>
                 <?php } ?>
     </article>
+    <?php include "footer.php"; ?>
 </body>
 </html>

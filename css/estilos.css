@@ -312,6 +312,7 @@ header img {
         width: 17%;
         float: left;
         padding-top: 20px;
+        padding-left: 3px;
     }
 
         aside ul {
@@ -369,7 +370,6 @@ header img {
         padding-bottom: 30px;
     }
 
-
     @media only screen and (max-width: 1000px) {
 
         aside {
@@ -395,8 +395,6 @@ header img {
             width: 100%;
         }
     }
-
-
 
     /* Galeria responsiva */
 
@@ -462,6 +460,7 @@ header img {
         background-color: azure;
         clear: both;
     }
+
     /***************************************/
     /*                OBRA                 */
     /***************************************/
@@ -475,24 +474,24 @@ header img {
         margin-top: -20px;
         background-color: rgba(244, 250, 252, 0.938);
         margin-bottom: -30px;
+        height: 1100px;
     }
 
     div.obra {
         padding-top: 20px;
         padding-bottom: 100px;
-        width: 70%;
         margin-top: 20px;
         margin-left: 15%;
     }
 
     div.imagen {
         margin: 10px,10px,10px,10px;
-        text-align: center;
-        border-bottom: solid black 1px;
+        width: 30%;
+        height: 500px;
     }
 
         div.imagen img {
-            width: 30%;
+            width: 100%;
             margin-bottom: 20px;
             border: solid rgb(100, 100, 100) 2px;
             border-radius: 7px;
@@ -504,15 +503,55 @@ header img {
 
     div.texto {
         margin: 10px,10px,10px,12px;
+        margin-top: -540px;
         margin-bottom: 50px;
+        width: 52%;
+        margin-right: 15%;
+        float: right;
+    }
+
+    div.botones {
+        width: 100%;
+        margin-top: 30px;
     }
 
     div.video {
         text-align: center;
         width: 100%;
+        margin-left: -220px;
     }
 
-    /* BOTONES */
+    /* Pantallas más pequeñas, se muestra todo en una columna */
+    @media only screen and (max-width: 700px) {
+        div.fondo_obra {
+            height: 1800px;
+        }
+        div.obra {
+            margin-left: 1%;
+        }
+        div.imagen {
+            width: 60%;
+            margin-left: 20%;
+            height: 650px;
+        }
+
+        div.texto {
+            width: 80%;
+            margin-top: 0px;
+            margin-right: 10%;
+            margin-right: 10%;
+        }
+
+        div.video {
+            margin-left: 0px;
+        }
+    }
+
+
+/******************************/
+/*         BOTONES            */
+/******************************/
+
 a.boton {
     display: inline-block;
     background-color: #2AB9E7;
@@ -533,6 +572,17 @@ a.boton {
         background-color: white;
         color: black;
     }
+
+@media only screen and (max-width: 920px) {
+
+    a.boton {
+        width: 98%;
+    }
+
+    div.obra {
+        padding-bottom: 180px;
+    }
+}
 
 @media only screen and (max-width: 700px) {
 

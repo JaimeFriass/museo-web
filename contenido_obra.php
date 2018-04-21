@@ -38,32 +38,39 @@
             <div class="obra">
                 <?php if ($nombre != "") { ?>
                     <h1><?php echo $nombre; ?></h1>
-
                     <div class="imagen">
                         <img <?php echo "src='".$imagen."'" ?>>
+                        <?php echo $dimensiones; ?>
+
+                        <?php if ($procedencia != "") { ?>
+                            <h3>Procedencia</h3>
+                        <?php echo $procedencia;} ?><br>
+                            
+                        <?php if($procedencia != "") { ?>
+
                     </div>
                     <div class="texto"><br>
-                    <?php echo $dimensiones; ?>
 
-                    <?php if ($procedencia != "") { ?>
-                        <h3>Procedencia</h3>
-                    <?php echo $procedencia;} ?><br>
+                        <h3>Comentarios</h3>
+                        <?php echo $comentario; } ?>
+
+                        <div class="botones">
+                            <a class="boton" href="obra_imprimir.html">Imprimir</a>
+                            <a class="boton" href="https://twitter.com">Compartir en Twitter</a>
+                            <a class="boton" href="https://facebook.com">Compartir en Facebook</a>
+                        </div>
+
+                        <?php if($video != "") { ?>
                         
-                    <?php if($procedencia != "") { ?>
-                    <h3>Comentarios</h3>
-                    <?php echo $comentario; } ?>
-
-                    <?php if($video != "") { ?>
-                    <h3>Vídeo</h3>
-                    <div class="video">
-                        <iframe width="560" height="315" src=<?php echo "'".$video."'"; ?> frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
+                        <div class="video">
+                        <h3>Vídeo</h3>
+                                <iframe width="560" height="315" src=<?php echo "'".$video."'"; ?> frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
                     <?php } ?>
                     </div>
+   
 
-                    <a class="boton" href="obra_imprimir.html">Imprimir</a>
-                    <a class="boton" href="https://twitter.com">Compartir en Twitter</a>
-                    <a class="boton" href="https://facebook.com">Compartir en Facebook</a>
+
                 <?php } else echo "<h1>No existe esa obra</h1>"; ?>
             </div>
         </div>

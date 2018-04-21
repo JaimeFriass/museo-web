@@ -37,5 +37,7 @@ include "header.php";
             ?>
         </ul>
     </aside>
+
+    <?php include "footer.php"; ?>
 </body>
 </html>
