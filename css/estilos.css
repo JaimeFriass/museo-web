@@ -474,7 +474,7 @@ header img {
         margin-top: -20px;
         background-color: rgba(244, 250, 252, 0.938);
         margin-bottom: -30px;
-        height: 1100px;
+        height: 1200px;
     }
 
     div.obra {
@@ -519,6 +519,7 @@ header img {
         text-align: center;
         width: 100%;
         margin-left: -220px;
+        margin-top: 270px;
     }
 
     /* Pantallas más pequeñas, se muestra todo en una columna */

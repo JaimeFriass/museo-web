@@ -56,7 +56,7 @@
 
                         <div class="botones">
                             <a class="boton" href="obra_imprimir.html">Imprimir</a>
-                            <a class="boton" href="https://twitter.com">Compartir en Twitter</a>
+                            <a class="boton" href="" onclick="window.open('twitter.html', 'Twitter', 'width=400,height=400')">Compartir en Twitter</a>
                             <a class="boton" href="https://facebook.com">Compartir en Facebook</a>
                         </div>
 
