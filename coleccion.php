@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
 
 
 $titulo_pag = "Colección";
+$menu_activo = 3;
 include "head.php";
 include "header.php";
 

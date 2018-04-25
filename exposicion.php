@@ -11,6 +11,7 @@ $titulo_pag = $nombre = $array_resultado['nombre'];
 $fechas = $array_resultado['fechas'];
 $ubicacion = $array_resultado['ubicacion'];
 $horario = $array_resultado['horario'];
+$menu_activo = 5;
 include "head.php";
 include "header.php";
 

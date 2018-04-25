@@ -56,8 +56,12 @@
 
                         <div class="botones">
                             <a class="boton" href="obra_imprimir.html">Imprimir</a>
-                            <a class="boton" href="" onclick="window.open('twitter.html', 'Twitter', 'width=400,height=400')">Compartir en Twitter</a>
-                            <a class="boton" href="https://facebook.com">Compartir en Facebook</a>
+                            <a class="boton" href="" 
+                                onclick="window.open('twitter.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Twitter', 'width=500,height=400')">
+                                Compartir en Twitter</a>
+                            <a class="boton" href="" 
+                                onclick="window.open('facebook.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Facebook', 'width=500,height=400')">
+                                Compartir en Facebook</a>
                         </div>
 
                         <?php if($video != "") { ?>
