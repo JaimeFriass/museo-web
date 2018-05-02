@@ -20,6 +20,27 @@ include "header.php";
         else{
             $pass = test_input($_POST["pass"]);
         }
+
+        include "conexion.php"
+
+        $resultado = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE nombre=".$name);
+        
+        if($resultado != NULL){
+            $array_resultado =  mysqli_fetch_assoc($resultado);
+            if( $array_resultado['pass'] != $pass){
+                echo "Contraseña incorrecta";
+            }
+            else{
+                $id = $array_resultado['id'];
+                session_start();
+                $_SESSION["id"] = $id;
+                $_SESSION["nombre"] = $name;
+                $_SESSION["pass"] = $pass;
+    
+            }
+        }
+        else
+            echo "No existe ese usuario";
     }
     ?>
 
@@ -48,27 +69,8 @@ include "header.php";
 </form> 
 
 
-<?php>
-    include "conexion.php"
+<?php
 
-    $resultado = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE nombre="$name);
-    
-    if($resultado != NULL){
-        $array_resultado =  mysqli_fetch_assoc($resultado);
-        if( $array_resultado['pass'] != $pass){
-            echo "Contraseña incorrecta";
-        }
-        else{
-            $id = $array_resultado['id'];
-            session_start();
-            $_SESSION["id"] = $id;
-            $_SESSION["nombre"] = $nombre;
-            $_SESSION["pass"] = $pass;
-
-        }
-    }
-    else
-        echo "No existe ese usuario";
 
     include "footer.php";
 
