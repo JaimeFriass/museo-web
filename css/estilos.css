@@ -642,7 +642,7 @@ a.boton {
     div.datos_usuario {
         padding: 20px 20px 20px 20px;
         width: 100%;
-        height: 280px;
+        height: 340px;
         background-color: rgba(141, 218, 248, 0.247);
     }
 
@@ -677,5 +677,40 @@ a.boton {
             float: left;
             margin: 15px 15px 15px 15px;
         }
+
+    /***************************************/
+    /*             LOGIN                   */
+    /***************************************/
+    div.container_login {
+        margin: 20px 20px 20px 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        width: 65%;
+        margin-left: 25%;
+    }
+    form.login {
+        width: 50%;
+        padding: 20px 20px 20px 20px;
+        margin: 20px 20px 20px 20px;
+    }
+
+    form.login input {
+        margin: 10px 10px 10px 10px;
+        height: 37px;
+        font-size: 13pt;
+    }
+    form.login input[type=text] {
+        width: 90%;
+    }
+
+    form.login input[type=password] {
+        width: 90%;
+    }
+
+    form.login input[type=submit] {
+        width: 90%;
+        height: 37px;
+    }
     
     

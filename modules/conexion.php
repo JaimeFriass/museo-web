@@ -1,4 +1,5 @@
 <?php
+session_start();
 $conexion = mysqli_connect ("localhost", "prueba2", "prueba2"); //establece conexion
 $abreBD = mysqli_select_db ($conexion, "museoweb"); //abre la BD
 // Idioma

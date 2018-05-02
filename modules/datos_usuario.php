@@ -1,5 +1,7 @@
 <div class="datos_usuario">
-    <h2><?php echo $this->nombre ?></h2>
+    <h2><?php echo $nombre ?></h2>
+    <p>Correo: <?php echo $email; ?></p>
+    <p>Móvil:  <?php echo $tlf; ?></p>
     <div class="nuevo_nombre">
         <h4>Cambiar nombre</h4>
         <form>
