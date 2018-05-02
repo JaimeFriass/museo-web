@@ -1,5 +1,5 @@
 <?php
-    include "conexion.php";
+    include "modules/conexion.php";
 
     class Panel {
         private $tipo_usuario;
@@ -8,7 +8,7 @@
         // Constructor del panel, establece el tipo y el nombre
         // del usuario actual
         function __construct() {
-            //$tipo = $_SESSION['tipo'];
+            $tipo = $_SESSION['tipo'];
             $tipo = 4;
             if ($tipo > 0 && $tipo <= 4)
                 $this->tipo_usuario = $tipo;
@@ -56,9 +56,11 @@
     $menu_activo = 5;
     $titulo_pag = "Panel";
     
-    include "head.php";
-    include "header.php";
+    include "modules/head.php";
+    include "modules/header.php";
 
     $panel = new Panel();
     $panel->mostrarPaneles();
+
+    include "modules/footer.php";
 ?>

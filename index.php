@@ -1,5 +1,5 @@
 <?php
-    include "conexion.php";
+    include "modules/conexion.php";
     
     // Si se le ha pasado un id de una obra en la URL:
     if (isset($_GET['id'])) {
@@ -17,8 +17,8 @@
         $resultado_exp   = mysqli_query ($conexion, "SELECT * FROM exposiciones");
         $titulo_pag = "Portada";
         
-        include "head.php";
-        include "header.php";
+        include "modules/head.php";
+        include "modules/header.php";
 ?>
 
 <body>
@@ -53,7 +53,7 @@
         </ul>
     </aside>
 
-    <?php include "footer.php"; ?>
+    <?php include "modules/footer.php"; ?>
 
 </body>
 

@@ -1,6 +1,6 @@
 <?php
 
-include "conexion.php";
+include "modules/conexion.php";
 if (isset($_GET['id'])) {
     $resultado_obras = mysqli_query ($conexion, "SELECT * FROM obras, colecciones WHERE colecciones.id_col=".$_GET['id']." AND obras.id=colecciones.id_obra");
     $resultado_col   = mysqli_query( $conexion, "SELECT * FROM coleccion WHERE id=".$_GET['id']);
@@ -11,8 +11,8 @@ if (isset($_GET['id'])) {
 
 $titulo_pag = "Colección";
 $menu_activo = 3;
-include "head.php";
-include "header.php";
+include "modules/head.php";
+include "modules/header.php";
 
 ?>
 <body>
@@ -46,6 +46,6 @@ include "header.php";
             </ul>
                 <?php } ?>
     </article>
-    <?php include "footer.php"; ?>
+    <?php include "modules/footer.php"; ?>
 </body>
 </html>

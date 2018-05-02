@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "modules/conexion.php";
 $id_obra = $_GET["id"];
 $seleccion_datos = "SELECT  *  FROM obras WHERE id = ".$id_obra ; //sentencia en sql
 $seleccion_comentarios = "SELECT * FROM comentarios WHERE obra_com = ".$id_obra;
@@ -31,15 +31,15 @@ mysqli_close($conexion);
 <html>
 <?php
     $titulo_pag = $nombre;
-    include "head.php";
+    include "modules/head.php";
 ?>
 <body>
      
-    <?php $menu_activo = 2; include "header.php";
+    <?php $menu_activo = 2; include "modules/header.php";
 
-    include "contenido_obra.php";
+    include "modules/contenido_obra.php";
 
-    include "footer.php"; ?>
+    include "modules/footer.php"; ?>
 
 
 </body>

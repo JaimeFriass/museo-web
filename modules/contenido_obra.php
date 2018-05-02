@@ -57,10 +57,10 @@
                         <div class="botones">
                             <a class="boton" href="obra_imprimir.html">Imprimir</a>
                             <a class="boton" href="" 
-                                onclick="window.open('twitter.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Twitter', 'width=500,height=400')">
+                                onclick="window.open('modules/twitter.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Twitter', 'width=500,height=400')">
                                 Compartir en Twitter</a>
                             <a class="boton" href="" 
-                                onclick="window.open('facebook.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Facebook', 'width=500,height=400')">
+                                onclick="window.open('modules/facebook.php?n=<?php echo $nombre; ?>&img=<?php echo $imagen ?>', 'Facebook', 'width=500,height=400')">
                                 Compartir en Facebook</a>
                         </div>
 

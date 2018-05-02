@@ -1,6 +1,6 @@
 <?php
 $menu_activo = 10; 
-include "header.php"; 
+include "modules/header.php"; 
 
     // define variables and set to empty values
     $nameErr = $passErr="";
@@ -21,7 +21,7 @@ include "header.php";
             $pass = test_input($_POST["pass"]);
         }
 
-        include "conexion.php"
+        include "modules/conexion.php"
 
         $resultado = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE nombre=".$name);
         
@@ -70,10 +70,7 @@ include "header.php";
 
 
 <?php
-
-
-    include "footer.php";
-
+    include "modules/footer.php";
 ?>
 
 </body>
