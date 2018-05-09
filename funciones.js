@@ -111,13 +111,16 @@ function ocultarComentarios() {
   e.hidden = true;
 }
 function validarForm() {
-  var nombre = document.forms["comentar"]["nombre"].value;
+  /*var nombre = document.forms["comentar"]["nombre"].value;
   var email = document.forms["comentar"]["e-mail"].value;
-  var comentario = document.forms["comentar"]["mensaje"].value;
+  var comentario = document.forms["comentar"]["mensaje"].value;*/
 
-  if (nombre == '' || email == '' || comentario == '') {
-    alert("Algo esta vacío");
-  } else {
+  if($_SESSION['tipo'] > 0 && isset($_SESSION)){ //si está iniciaada una sesion y es un usuario registrado
+    //usuario resgistrado 
+    var nombre = $_SESSION['nombre'] ;
+    var email = $_SESSION['correo'] ;
+    var comentario  = document.forms["comentar"]["mensaje"].value;
+  
     // Si esta correcto el comentario se envia
     var fecha = new Date();
     var dia = fecha.getDate(); var mes = fecha.getMonth();
