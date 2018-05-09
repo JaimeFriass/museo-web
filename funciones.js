@@ -113,7 +113,9 @@ function ocultarComentarios() {
 function validarForm() {
   /*var nombre = document.forms["comentar"]["nombre"].value;
   var email = document.forms["comentar"]["e-mail"].value;
-  var comentario = document.forms["comentar"]["mensaje"].value;*/
+  var comentario = document.forms["comentar"]["mensaje"].value;
+  //otra opcion 
+  //<input type="hidden" name="aa" value="xx" >en el html*/
 
   if($_SESSION['tipo'] > 0 && isset($_SESSION)){ //si está iniciaada una sesion y es un usuario registrado
     //usuario resgistrado 
