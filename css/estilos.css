@@ -650,6 +650,13 @@ a.boton {
             font-size: 20pt;
         }
 
+        div.datos_usuario h3 {
+            color: rgb(119, 119, 119);
+            margin-top: -20px;
+            font-size: 10pt;
+            font-style: italic;
+        }
+
         div.datos_usuario div.nuevo_nombre {
             text-align: center;
             padding: 15px 15px 15px 15px;

@@ -64,6 +64,7 @@
 
     $panel = new Panel();
     $panel->mostrarPaneles($conexion);
+    
     echo "<a href='modules/cerrar_sesion.php' class='boton'>Cerrar sesión</a>";
     include "modules/footer.php";
 ?>
