@@ -1,7 +1,16 @@
 <div class="datos_usuario">
     <h2><?php echo $nombre ?></h2>
-    <p>Correo: <?php echo $email; ?></p>
-    <p>Móvil:  <?php echo $tlf; ?></p>
+    <?php 
+    if ($this->tipo_usuario == 2)
+        echo "<h3>Moderador</h3>";
+    else if ($this->tipo_usuario == 3) {
+        echo "<h3>Gestor museo</h3>";
+    } else if ($this->tipo_usuario == 4) {
+        echo "<h3>Superusuario</h3>";
+    }
+    ?>
+    <p><i class="fa fa-envelope"></i> <?php echo $email; ?></p>
+    <p><i class="fa fa-mobile-alt"></i>  <?php echo $tlf; ?></p>
     <div class="nuevo_nombre">
         <h4>Cambiar nombre</h4>
         <form>

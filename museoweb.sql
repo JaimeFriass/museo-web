@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2018 a las 01:29:48
+-- Tiempo de generación: 09-05-2018 a las 20:27:28
 -- Versión del servidor: 10.1.29-MariaDB
 -- Versión de PHP: 7.1.12
 
@@ -144,6 +144,29 @@ INSERT INTO `obras` (`Nombre`, `id`, `fecha`, `dimensiones`, `procedencia`, `com
 ('Coraza anatómica', 7, 'Siglo IV a.C.', '\r\nAltura, 44,5 cm. Anchura, 37 cm.\r\n', 'Protohistoria, cultura púnica', 'Esta pieza apareció en la costa granadina, en el mar, en la bahía de la antigua ciudad de Sexi (Almunécar), donde se han encontrado fragmentos anfóricos púnicos de otros pecios hundidos posteriormente. Esta coraza o peto de bronce, probablemente suritálica, reproduce el esquema anatómico del cuerpo desnudo, modelado sobre la gran lámina de bronce. Una escotadura se adapta a la curvatura del cuello y dos laterales a las axilas. Se marcan los músculos pectorales y, mediante la incisión o troquelado, las tetillas. Se apuntan también los músculos del abdomen, insinuándose el relieve de las caderas y el círculo del ombligo. La presencia de esta coraza en el sur de la Península Ibérica asocia esta zona al comercio del Sur de Italia y de Sicilia desde las últimas décadas del siglo V y a lo largo del IV a.C. Las corazas anatómicas bivalvas de esta época son especialmente frecuentes en el área de Apulia, asociadas a enterramientos aristocráticos. En nuestro caso se piensa en el naufragio de un barco que arribaba al puerto púnico, pudiendo ser la coraza un presente para un guerrero aristocrático local. También se ha aludido a la posibilidad de que pudiera tratarse de un trofeo de guerra adquirido por un mercenario ibérico tras su regreso de alguna batalla en el Sur de Italia o en Sicilia, pero esta explicación se considera hoy con precaución y escepticismo. Queda una última opción, la de que se trate de una ofrenda sagrada, un exvoto tras un feliz viaje. Ello nos asociaría este objeto guerrero con otros armamentos hallados en la desembocadura de ríos o en entradas portuarias.', 'img/coraza_anatomica.jpg', ''),
 ('Astrolabio', 8, NULL, 'Bronce, fundido.\r\nDiámetro, 18,5 cm.', 'Albaicín, Granada', 'El astrolabio parece ser un invento de la escuela de Alejandría, tal vez de Hiparco o de Ptolomeo. El vocablo astrolabio significa comprensión de los astros. Es un instrumento de precisión que se utilizaba como observatorio y como ábaco de cálculo astronómico. Consta de un círculo metálico ahuecado, o madre, en el que aparecen grabados en sus dos caras círculos graduados y cuadrantes, la deferente del sol con sus 365 días y 12 meses, así como el zodiaco con su origen en el punto cero de Aries, que coincidía con el equinoccio de primavera. En el centro se colocaban las láminas, diferentes para cada latitud, y en ellas de dibujaban en proyección estereográfica sobre el ecuador, el cénit de la latitud correspondiente, que en el astrolabio de Granada es 37º, los almucantarats o círculos paralelos al horizonte de la citada latitud, el horizonte inclinado, el ecuador y los trópicos de Cáncer y de Capricornio. Sobre este conjunto se sitúa la red o araña, constituida por un enrejado de flechas cuyas puntas señalan la situación de algunas de las estrellas más brillantes del cielo. La araña puede girar en torno al centro del astrolabio, que representa el eje norte - sur, y en ese giro representa el movimiento aparente de la bóveda celeste. Con este instrumento los musulmanes hacían sus cálculos astronómicos y astrológicos. El astrolabio de Granada es uno de los cuarenta que se conservan en el mundo. ', 'img/astrolabio.jpg', '');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `pass` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
+  `tipo` int(11) NOT NULL DEFAULT '0',
+  `email` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tlf` int(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `pass`, `tipo`, `email`, `tlf`) VALUES
+(1, 'paco', 'paco', 4, 'pacoeselmejor@gmail.com', 666554433),
+(2, 'eusebio', 'eusebio', 3, 'eusebioputoamo@gmail.com', 724235392);
+
 --
 -- Índices para tablas volcadas
 --
@@ -180,6 +203,12 @@ ALTER TABLE `obras`
   ADD KEY `id` (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -206,6 +235,12 @@ ALTER TABLE `exposiciones`
 --
 ALTER TABLE `obras`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
