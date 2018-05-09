@@ -143,7 +143,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`nombre`, `id`, `correo`, `pass`, `tipo`) VALUES
-('paco', 1, 'paco@gmail.com', 'paco', 0);
+('paco', 1, 'paco@gmail.com', 'paco', 0),
+('Jimmy', 2, 'Jimmy@sunny.com', 'Jimmy', 3),
+('Maria', 3, 'Maria@correo.es', 'Mari', 2),
+('Carla', 4, 'Carla@fresa.com', 'carla', 1);
 
 --
 -- Índices para tablas volcadas
@@ -214,7 +217,7 @@ ALTER TABLE `obras`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
