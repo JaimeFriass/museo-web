@@ -1,3 +1,23 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-05-2018 a las 20:27:28
+-- Versión del servidor: 10.1.29-MariaDB
+-- Versión de PHP: 7.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Base de datos: `museoweb`
 --
@@ -131,22 +151,21 @@ INSERT INTO `obras` (`Nombre`, `id`, `fecha`, `dimensiones`, `procedencia`, `com
 --
 
 CREATE TABLE `usuarios` (
-  `nombre` varchar(50) NOT NULL,
   `id` int(11) NOT NULL,
-  `correo` varchar(50) DEFAULT NULL,
-  `pass` varchar(11) NOT NULL,
-  `tipo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nombre` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `pass` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
+  `tipo` int(11) NOT NULL DEFAULT '0',
+  `email` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tlf` int(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`nombre`, `id`, `correo`, `pass`, `tipo`) VALUES
-('paco', 1, 'paco@gmail.com', 'paco', 0),
-('Jimmy', 2, 'Jimmy@sunny.com', 'Jimmy', 3),
-('Maria', 3, 'Maria@correo.es', 'Mari', 2),
-('Carla', 4, 'Carla@fresa.com', 'carla', 1);
+INSERT INTO `usuarios` (`id`, `nombre`, `pass`, `tipo`, `email`, `tlf`) VALUES
+(1, 'paco', 'paco', 4, 'pacoeselmejor@gmail.com', 666554433),
+(2, 'eusebio', 'eusebio', 3, 'eusebioputoamo@gmail.com', 724235392);
 
 --
 -- Índices para tablas volcadas
@@ -198,26 +217,32 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `coleccion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
   MODIFY `id_com` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `exposiciones`
 --
 ALTER TABLE `exposiciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la exp', AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT de la tabla `obras`
 --
 ALTER TABLE `obras`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
