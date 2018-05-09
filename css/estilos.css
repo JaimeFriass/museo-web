@@ -642,7 +642,7 @@ a.boton {
     div.datos_usuario {
         padding: 20px 20px 20px 20px;
         width: 100%;
-        height: 340px;
+        height: 360px;
         background-color: rgba(141, 218, 248, 0.247);
     }
 
@@ -683,6 +683,53 @@ a.boton {
             background-color: white;
             float: left;
             margin: 15px 15px 15px 15px;
+        }
+    
+    div.conf_roles {
+        text-align: center;
+        width: 50%;
+        margin: 20px 20px 20px 20px;
+        margin-left:25%;
+    }
+
+    form.buscar_usuario input[type=text] {
+        width: 30%;
+        margin: 5px;
+    }
+
+    form.buscar_usuario input[type=submit] {
+        width: 30%;
+    }
+
+    div.resultado_usuarios {
+        width: 100%;
+    }
+
+        div.resultado_usuarios table {
+            width: 100%;
+        }
+
+        div.resultado_usuarios table td {
+            padding: 5px;
+        }
+
+        div.resultado_usuarios table td.email {
+            font-size: 10pt;
+        }
+
+    div.roles {
+        height: 29px;
+        overflow: hidden;
+        width: 100%;
+        border: solid black 1px;
+        border-radius: 5px;
+    }
+
+        div.roles select {
+            border: none;
+            background: transparent;
+            padding: 5px 5px 5px 5px;
+            width: 100%;
         }
 
     /***************************************/

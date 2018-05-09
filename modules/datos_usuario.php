@@ -13,10 +13,15 @@
     <p><i class="fa fa-mobile-alt"></i>  <?php echo $tlf; ?></p>
     <div class="nuevo_nombre">
         <h4>Cambiar nombre</h4>
-        <form>
+        <form method="post" action="panel.php" >
             <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre">    
-            <input type="submit" value="Cambiar">
+            <input type="hidden" name="id_nombre" value="<?php echo $_SESSION['id']; ?>">
+            <input type="submit" name="actualizarnombre" value="Cambiar">
         </form>
+        <?php if ( isset($_POST['actualizarnombre']) ) {
+            $this->actualizarNombre($_POST['id_nombre'], $_POST['nuevo_nombre']);
+        }
+        ?>
     </div>
     <div class="nueva_pass">
         <h4>Cambiar contraseña</h4>

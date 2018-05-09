@@ -1,3 +1,3 @@
 <div class="conf_obras">
-    <h2>Configuración de obras</h2>
+    <h2><i class="fa fa-bookmark"></i> Configuración de obras</h2>
 </div>

@@ -5,7 +5,8 @@ $menu_activo = 10;
 include "modules/header.php";
 
 // Si está ya iniciada la sesión
-if ( isset($_SESSION['id']) ) { 
+if ( isset($_SESSION['id']) ) {
+    if ( $_SESSION['id'] != 1) {
     echo "SESSION id = ".$_SESSION['id'];    
     echo "<br>SESSION tipo = ".$_SESSION['tipo'];  
     ?>
@@ -14,7 +15,7 @@ if ( isset($_SESSION['id']) ) {
     </div>
 
 <?php
-} else {
+}} else {
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -27,7 +28,7 @@ if ( isset($_SESSION['id']) ) {
     $name = $pass = "";
     $id = -1;
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && !(isset($_SESSION['id']))) {
         echo "Se ha mandado un POST<br>";
         if (empty($_POST["name"])) {
             $nameErr = "Name is required";
