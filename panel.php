@@ -1,6 +1,5 @@
 <?php
     include "modules/conexion.php";
-    echo $_SESSION['id'];
     if ( !isset($_SESSION['id'])) {
         echo "id no establecido";
         header("Location: login.php");
@@ -106,6 +105,22 @@
 
         }
 
+        function mostrarObras() {
+            $res = mysqli_query( $this->conexion, "SELECT * FROM obras");
+
+            if ($res->num_rows > 0) {
+                while ($a_res = mysqli_fetch_assoc($res)) {
+                    echo "<div class='res_obra'>";
+                        echo "<img src='".$a_res['imagen']."' width=100 height=150>";
+                        echo "<form class='herramientas'>";
+                            echo "<a href='modules/eliminar_obra.php?id=".$a_res['id']."'><i class='fa fa-times-circle'></i></a>";
+                            echo "<a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt '></i></a>";
+                        echo "</form>";
+                    echo "</div>";
+                }
+            }
+        }
+
     }
 
 
@@ -118,6 +133,7 @@
     $panel = new Panel($conexion);
     $panel->mostrarPaneles($conexion);
     
-    echo "<a href='modules/cerrar_sesion.php' class='boton'>Cerrar sesión</a>";
+    echo "<div class='cerrar_sesion'><a href='modules/cerrar_sesion.php' 
+               class='boton cerrar_sesion'><i class='fa fa-times'></i> Cerrar sesión</a></div>";
     include "modules/footer.php";
 ?>
