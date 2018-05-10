@@ -11,8 +11,8 @@
     ?>
     <p><i class="fa fa-envelope"></i> <?php echo $email; ?></p>
     <p><i class="fa fa-mobile-alt"></i>  <?php echo $tlf; ?></p>
-    <div class="nuevo_nombre">
-        <h4>Cambiar nombre</h4>
+    <div class="panel nuevo_nombre">
+        <h4><i class="fa fa-font"></i> Cambiar nombre</h4>
         <form method="post" action="panel.php" >
             <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre">    
             <input type="hidden" name="id_nombre" value="<?php echo $_SESSION['id']; ?>">
@@ -23,13 +23,26 @@
         }
         ?>
     </div>
-    <div class="nueva_pass">
-        <h4>Cambiar contraseña</h4>
+    <div class="panel nueva_pass">
+        <h4><i class="fa fa-key"></i> Cambiar contraseña</h4>
         <form>
             <input type="password" name="vieja_pass" placeholder="Antigua contraseña">
             <input type="password" name="nueva_pass" placeholder="Nueva contraseña">
             <input type="password" name="nueva_pass2" placeholder="Confirmar contraseña">    
             <input type="submit" value="Cambiar">
         </form>
+    </div>
+
+    <div class="panel nuevo_correo">
+        <h4><i class="fa fa-envelope "></i> Cambiar correo</h4>
+        <form method="post" action="panel.php">
+            <input type="text" name="correo" placeholder="Nuevo correo">   
+            <input type="submit" name="actualizarcorreo" value="Cambiar">
+        </form>
+
+       <?php if ( isset($_POST['actualizarcorreo']) ) {
+            $this->actualizarCorreo($_SESSION['id'], $_POST['correo']);
+        }
+        ?>
     </div>
 </div>

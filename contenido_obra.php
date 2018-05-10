@@ -7,9 +7,7 @@ function array_recibe($url_array) {
    return $tmp;
 }
 
-
 $array=$_GET['array_env'];
-
 
 $array=array_recibe($array);
 

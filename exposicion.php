@@ -1,6 +1,6 @@
 <?php
 
-include "conexion.php";
+include "modules/conexion.php";
 
 $resultado_exposicion = mysqli_query ($conexion, "SELECT * FROM exposiciones WHERE id=".$_GET['id']);
 $resultado_exposiciones = mysqli_query ($conexion, "SELECT * FROM exposiciones");
@@ -12,8 +12,8 @@ $fechas = $array_resultado['fechas'];
 $ubicacion = $array_resultado['ubicacion'];
 $horario = $array_resultado['horario'];
 $menu_activo = 5;
-include "head.php";
-include "header.php";
+include "modules/head.php";
+include "modules/header.php";
 
 
 ?>
@@ -39,6 +39,6 @@ include "header.php";
         </ul>
     </aside>
 
-    <?php include "footer.php"; ?>
+    <?php include "modules/footer.php"; ?>
 </body>
 </html>

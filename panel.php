@@ -62,7 +62,7 @@
             echo "<hr>";
             if ($res->num_rows > 0) {
                 while($a_res =  mysqli_fetch_assoc($res)) {
-                    echo "<form id='actualizarRol' method='post' action='panel.php'>";
+                    echo "<form id='actualizarRol' method='post' action='panel.php#roles'>";
                     echo "<input type='hidden' name='id_usuario' value='".$a_res['id']."'>";
                     echo "<div class='resultado_usuarios'><table><tr>";
                         echo "<td>".$a_res['nombre']."</td><td class='email'>".$a_res['email']."</td><td>";
@@ -101,12 +101,31 @@
             }
         }
 
+        // Actualiza la contraseña de $id comprobando que coincide $pass_ant
+        // con la anterior.
         function actualizarContra($id, $pass_ant, $pass_nueva) {
 
         }
 
-        function mostrarObras() {
-            $res = mysqli_query( $this->conexion, "SELECT * FROM obras");
+        // Actualiza el correo de $id
+        function actualizarCorreo($id, $email) {
+            $comp = mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE correo='".$email."'");
+            if ($comp->num_rows == 0) {
+                $res = mysqli_query ($this->conexion, "UPDATE usuarios SET email='".$email."' WHERE id=".$id);
+                if ($res)
+                    echo "Correo actualizado correctamente.";
+                else
+                    echo "Error al actualizar el correo";
+            } else {
+                echo "Correo activo. Prueba otro.";  
+            }
+        }
+
+        // Muestra todas las obras, en secciones de 16 obras
+        function mostrarObras($div) {
+            // Si se pasa a la siguiente seccion se muestran las siguientes obras
+            $offset = $div * 16;
+            $res = mysqli_query( $this->conexion, "SELECT * FROM obras LIMIT 16 OFFSET ".$offset);
 
             if ($res->num_rows > 0) {
                 while ($a_res = mysqli_fetch_assoc($res)) {
@@ -119,6 +138,20 @@
                     echo "</div>";
                 }
             }
+        }
+
+        function buscarObra($nombre) {
+            $res = mysqli_query ($this->conexion, "SELECT * FROM obras WHERE Nombre LIKE '%".$nombre."%'");
+            echo "<hr><div class='res_obra_busc'><table>";
+            if ($res->num_rows > 0) {
+                while($a_res =  mysqli_fetch_assoc($res)) {
+                    echo "<tr>";
+                        echo "<td>".$a_res['Nombre']."</td>";
+                        echo "<td><a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt'></i></a></td>";
+                    echo "</tr>";
+                }
+            }
+            echo "</table></div><br><hr>";
         }
 
     }
