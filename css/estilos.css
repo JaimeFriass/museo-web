@@ -571,12 +571,11 @@ a.boton {
     padding: 10px 10px 10px 10px;
     color: white;
     width: 26%;
-    float: left;
     vertical-align: middle;
     text-align: center;
     margin: 5px 5px 5px 5px;
     border-radius: 8px;
-    transition: 0.2s;
+    transition: 0.1s;
     text-shadow: 1px 1px gray;
 }
 
@@ -642,9 +641,19 @@ a.boton {
     div.datos_usuario {
         padding: 20px 20px 20px 20px;
         width: 100%;
-        height: 340px;
+        height: 450px;
         background-color: rgba(141, 218, 248, 0.247);
     }
+        div.datos_usuario div.panel {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 5px;
+            width: 27%;
+            float: left;
+            box-shadow: rgb(70, 102, 135) 2px 2px 5px;
+        }
 
         div.datos_usuario h2 {
             font-size: 20pt;
@@ -658,13 +667,7 @@ a.boton {
         }
 
         div.datos_usuario div.nuevo_nombre {
-            text-align: center;
-            padding: 15px 15px 15px 15px;
-            background-color: white;
-            width: 30%;
-            border-radius: 5px;
-            float: left;
-            margin: 15px 15px 15px 15px;
+
         }
 
         div.datos_usuario input[type=text] {
@@ -672,18 +675,195 @@ a.boton {
         }
 
         div.datos_usuario input[type=submit] {
-            width: 25%;
+            width: 50%;
         }
 
         div.datos_usuario div.nueva_pass {
-            width: 30%;
-            border-radius: 5px;
-            text-align: center;
-            padding: 15px 15px 15px 15px;
-            background-color: white;
-            float: left;
-            margin: 15px 15px 15px 15px;
+
         }
+
+    @media only screen and (max-width: 950px) {
+        div.datos_usuario {
+            height: 800px;
+        }
+
+        div.datos_usuario div.panel {
+            width: 84%;
+            margin: 5px;
+        }
+    }
+    form.buscar_usuario input[type=text] {
+        width: 30%;
+        margin: 5px;
+    }
+
+    form.buscar_usuario input[type=submit] {
+        width: 30%;
+    }
+
+    div.resultado_usuarios {
+        width: 100%;
+    }
+
+        div.resultado_usuarios table {
+            width: 100%;
+        }
+
+        div.resultado_usuarios table td {
+            padding: 5px;
+        }
+
+        div.resultado_usuarios table td.email {
+            font-size: 10pt;
+        }
+
+    div.conf_roles {
+        text-align: center;
+        width: 50%;
+        margin: 30px;
+        margin-left:25%;
+    }
+
+    div.roles {
+        height: 29px;
+        overflow: hidden;
+        width: 100%;
+        border: solid black 1px;
+        border-radius: 5px;
+    }
+
+        div.roles select {
+            border: none;
+            background: transparent;
+            padding: 5px 5px 5px 5px;
+            width: 100%;
+        }
+
+    @media only screen and (max-width: 850px) {
+        div.conf_roles {
+            width: 100%;
+            margin-left: 0%;
+        }
+    }
+
+    /*  CONFIGURACION DE  OBRAS */
+
+    div.conf_obras {
+        width: 50%;
+        margin: 30px;
+        margin-left: 25%;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    form.buscar_obra input[type=text] {
+        width: 30%;
+        margin: 5px;
+    }
+
+    form.buscar_obra input[type=submit] {
+        width: 30%;
+    }
+
+    div.res_obra_busc {
+        width: 100%;
+        text-align: center;
+    }
+
+        div.res_obra_busc table {
+            width: 100%;
+        }
+
+        div.res_obra_busc table td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        div.res_obra_busc a {
+            color: rgb(11, 138, 201);
+            font-size: 15pt;
+            transition: 0.2s;   
+        }
+
+        div.res_obra_busc a:hover {
+            color: rgb(112, 207, 255);
+        }
+
+    @media only screen and (max-width: 800px) {
+        div.conf_obras {
+            width: 100%;
+            margin-left: 0%;
+        }
+    }
+
+    div.lista_obras {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+        div.lista_obras div.res_obra {
+            padding: 0 6px;
+            margin-top: 10px;
+            float: left;
+            width: 10.888%;  
+        }
+
+            div.lista_obras div.res_obra form.herramientas {
+                height: 50px;
+                padding: 15px;
+                font-size: 15pt;
+            }
+
+            div.lista_obras div.res_obra img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                border: solid gray 1px;
+            }
+
+            form.herramientas a {
+                color: rgb(19, 144, 194);
+                margin: 6px;
+                margin-top: -10px;
+            }
+
+            form.herramientas a:hover {
+                color: black;
+            }
+
+    @media only screen and (max-width: 800px) {
+        div.lista_obras div.res_obra {
+            width: 22.888%;  
+        }
+
+        div.lista_obras div.res_obra form.herramientas {
+            font-size: 20pt;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        div.lista_obras div.res_obra {
+            width: 46.888%;  
+        }
+    }
+            
+    
+
+    div.cerrar_sesion {
+        width: 100%;
+    }
+    
+    div.cerrar_sesion a.cerrar_sesion {
+        width: 40%;
+        margin: 30px;
+        margin-left: 30%;
+        background: linear-gradient(rgb(219, 102, 102), rgb(235, 114, 114));
+    }
+
+    div.cerrar_sesion a.cerrar_sesion:hover {
+        background: linear-gradient(rgb(238, 184, 184), rgb(236, 176, 176));
+    }
 
     /***************************************/
     /*             LOGIN                   */
@@ -721,3 +901,76 @@ a.boton {
     }
     
     
+    /***************************************/
+    /*             EDICION                 */
+    /***************************************/
+
+    a.volver {
+        color: rgb(7, 123, 190);
+        margin: 10px;
+        margin-left: -70px;
+        margin-top: 150px;
+        font-size: 15pt;
+    }
+
+    a.volver:hover {
+        color: rgb(107, 206, 255);
+    }
+
+
+    form.edicion input {
+        margin: 20px;
+        padding: 10px;
+        background: transparent;
+        border: none;
+    }
+
+    form.edicion input.nombre {
+        font-size: 20pt;
+        width: 90%;
+    }
+
+    form.edicion input.dimensiones {
+        font-size: 15pt;
+        width: 100%;
+    }
+
+    form.edicion input.procedencia {
+        font-size: 15pt;
+    }
+
+    form.edicion textarea.comentario {
+        height: 400px;
+        width: 100%;
+        margin: 20px;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        font-size: 12pt;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    form.edicion input.submit {
+        background-color: rgb(80, 169, 253);
+        font-size: 15pt;
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    p.success {
+        color: rgb(4, 100, 4);
+        font-size: 15pt;
+        margin: 1px;
+        background-color: rgba(131, 253, 107, 0.2);
+        padding: 12px;
+        border-radius: 7px;
+    }
+
+    p.error {
+        color: rgb(138, 34, 7);
+        font-size: 15pt;
+        margin: 1px;
+        background-color: rgba(235, 89, 63, 0.2);
+        padding: 12px;
+        border-radius: 7px;
+    }

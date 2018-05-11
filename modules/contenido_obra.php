@@ -15,14 +15,16 @@
                 }
             ?>
         </div>
-
-        <form name="comentar" class="escribir" onsubmit="return validarForm()">
-            <input type="hidden" name="fecha" value="CURRENT_TIMESTAMP()">
-            <input type="text" name="nombre" class="nombre" placeholder="Nombre">
-            <input type="text" name="e-mail" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
-            <input required="true" name="mensaje" class="texto_comentario" type="text" placeholder="Comentario">
-            <input type="submit" value="Enviar">
-        </form>
+        
+        <?php if (isset($_SESSION['tipo'])) { ?>
+            <form name="comentar" class="escribir" onsubmit="return validarForm()">
+                <input type="hidden" name="fecha" value="CURRENT_TIMESTAMP()">
+                <input type="text" name="nombre" class="nombre" placeholder="Nombre">
+                <input type="text" name="e-mail" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
+                <input required="true" name="mensaje" class="texto_comentario" type="text" placeholder="Comentario">
+                <input type="submit" value="Enviar">
+            </form>
+        <?php } ?>
     </div>
 
     <script>

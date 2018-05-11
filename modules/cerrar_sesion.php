@@ -1,8 +1,10 @@
 <?php
-unset($_SESSION['id']);
-unset($_SESSION['tipo']);
+session_start();
+//$_SESSION['id'] = -1;
+//session_destroy();
+$_SESSION = Array();
 session_unset();
-session_destroy();
+
 echo "SESSION id = ".$_SESSION['id'];
 header("Location: ../index.php");
 
