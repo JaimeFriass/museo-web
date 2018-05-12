@@ -170,14 +170,17 @@
                 if ($res->num_rows > 0) {
                     while ($a_res = mysqli_fetch_assoc($res)) {
                             echo "<div class = 'mostrarComent'>";
+                            
                             echo "<td>".$a_res['nom_com']."</td>";
-                            echo "<td>".$a_res['texto_com']."</td>";
-                            echo "</div>";
+                            echo "<li>".$a_res['texto_com']." </li>";
+                           
 
-                           echo "<form class='herramientas'>";
+                            echo "<form class='herramientas'>";
                                 echo "<a href='modules/borrar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-times-circle'></i></a>";
                                 echo "<a href='modules/editar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-pencil-alt '></i></a>";
                             echo "</form>";
+                            
+                            echo "</div>";
                     
                     }
                 }

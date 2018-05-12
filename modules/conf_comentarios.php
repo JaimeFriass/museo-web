@@ -1,4 +1,4 @@
-<div class="conf_comentarios">
+<div id="coments" class="conf_comentarios">
     <h2>Configuración de comentarios</h2>
 
     <?php $this->mostrarComentarios();?>

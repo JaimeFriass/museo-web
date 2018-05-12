@@ -849,11 +849,32 @@ a.boton {
     }
             
     /* comentarios*/
+
+    div.conf_comentarios{
+        width: 50%;
+        margin: 30px;
+        margin-left: 25%;
+        margin-top: 60px;
+        text-align: center;
+    }
     
     div.mostrarComent{
         
-        margin-left: 30 px;
+        margin-top: 10 px;
+        text-align: center;
     }
+    div.mostrarComent table td id:com{
+            margin-left: 10 px;
+    }
+    div.mostratComent div.texto{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+
+
+
+    /*cerrar sesion*/
 
     div.cerrar_sesion {
         width: 100%;
