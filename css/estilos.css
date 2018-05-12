@@ -848,7 +848,12 @@ a.boton {
         }
     }
             
+    /* comentarios*/
     
+    div.mostrarComent{
+        
+        margin-left: 30 px;
+    }
 
     div.cerrar_sesion {
         width: 100%;
