@@ -45,6 +45,10 @@
         function mostrarRoles() {
             include "modules/roles.php";
         }
+    
+        function mostrarConfComentarios(){
+            include "modules/conf_comentarios.php";
+        }
 
         function mostrarPaneles($conexion) {
             $this->mostrarDatos($conexion);
@@ -53,6 +57,8 @@
                     $this->mostrarRoles();
                 case 3:
                     $this->mostrarConfObras();
+                case 2 :
+                    $this->mostrarConfComentarios();
                     break;
             }
         }
@@ -154,6 +160,27 @@
             echo "</table></div><br><hr>";
         }
 
+    
+
+
+            
+        function mostrarComentarios() {
+                $res = mysqli_query( $this->conexion, "SELECT * FROM comentarios LIMIT 16 ");
+    
+                if ($res->num_rows > 0) {
+                    while ($a_res = mysqli_fetch_assoc($res)) {
+                            echo "<td>".$a_res['id_com']."</td>";
+                            echo "<td>".$a_res['nom_com']."</td>";
+                            echo "<td>".$a_res['texto_com']."</td>";
+
+                           echo "<form class='herramientas'>";
+                                echo "<a href='modules/borrar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-times-circle'></i></a>";
+                                echo "<a href='moduldes/editar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-pencil-alt '></i></a>";
+                            echo "</form>";
+                    
+                    }
+                }
+        }
     }
 
 
