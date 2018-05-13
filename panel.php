@@ -193,9 +193,9 @@
         }
 
         function editar_comentario($id){
-            echo "<form action="modificar_comentario" method="POST">";
-            echo "<input type= "text" name = "nuevo" />";
-            echo "</form>"
+            echo "<form action='modificar_comentario' method='POST'>";
+            echo "<input type= 'text' name = 'nuevo' />";
+            echo "</form>";
 
             $_POST[nuevo] += "Mensaje editado por el moderador";
 
