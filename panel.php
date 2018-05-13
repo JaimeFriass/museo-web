@@ -175,9 +175,15 @@
                             echo "<li>".$a_res['texto_com']." </li>";
                            
 
-                            echo "<form class='herramientas'>";
-                                echo "<a href='modules/borrar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-times-circle'></i></a>";
-                                echo "<a href='modules/editar_comentario.php?id=".$a_res['id_com']."'><i class='fa fa-pencil-alt '></i></a>";
+                            echo "<form class='herramientas' action='panel.php#coments' method='POST' >";
+                                echo "<input type='submit'name='submit_borrar' value='borrar'>";
+                                echo "<input type='hidden'name='submit_id' value='".$a_res['id_com']."'>";
+
+                            echo "</form>";
+
+                            echo "<form class='herramientas' action='panel.php#coments' method='POST'>";
+                                echo "<input type='submit' name='submit_editar' value='editar'>";
+                                echo "<input type='hidden'name='submit_id' value='".$a_res['id_com']."'>";
                             echo "</form>";
                             
                             echo "</div>";
@@ -188,19 +194,31 @@
 
         function borrar_comentario($id){
             
-            $res = mysqli_query( $this->conexion, "DELETE FROM comentarios WHERE id_com = '$id'");
-            echo "<p>borrado</p>";
+            $res = mysqli_query( $this->conexion, "DELETE FROM comentarios WHERE id_com = ".$id);
+            if($res == true)
+                echo "<p>borrado</p>";
+            else
+                echo "<p>NO ESTA BOORADO BOLUDO PELOTUDO</p>";
         }
 
-        function editar_comentario($id){
-            echo "<form action='modificar_comentario' method='POST'>";
-            echo "<input type= 'text' name = 'nuevo' />";
+        function mostrar_editar_comentario($id){
+            echo "<form action='panel.php#coments' method='POST'>";
+            echo "<input type= 'text' name = 'nuevo'/>";
+            echo "<input type = 'submit' name = 'submit_editar_post' value='confirmar'>";
+            echo "<input type = 'hidden' name = 'submit_id' value='".$id."'>";
             echo "</form>";
-
-            $_POST[nuevo] += "Mensaje editado por el moderador";
-
-            $res = mysqli_query( $this->conexion, "UPDATE comentarios set texto_com = '$_POST[nuevo]' WHERE id_com = '$id' ");
             
+        }
+
+        function editar_comentario($id,$comentario){
+            $com_edit = $comentario . " .Mensaje editado por el moderador";
+
+            $res = mysqli_query( $this->conexion, "UPDATE comentarios set texto_com = '$com_edit' WHERE id_com = ".$id);
+
+            if($res == true)
+                echo "<p>EDITADO</p>";
+            else
+                echo "<p>NO ESTA EDITADO BOLUDO PELOTUDO</p>";
         }
     }
 
