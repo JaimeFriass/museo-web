@@ -186,12 +186,21 @@
                 }
         }
 
-        function borrar_comentario(){
-
+        function borrar_comentario($id){
+            
+            $res = mysqli_query( $this->conexion, "DELETE FROM comentarios WHERE id_com = '$id'");
+            echo "<p>borrado</p>";
         }
 
-        function editar_comentario(){
+        function editar_comentario($id){
+            echo "<form action="modificar_comentario" method="POST">";
+            echo "<input type= "text" name = "nuevo" />";
+            echo "</form>"
 
+            $_POST[nuevo] += "Mensaje editado por el moderador";
+
+            $res = mysqli_query( $this->conexion, "UPDATE comentarios set texto_com = '$_POST[nuevo]' WHERE id_com = '$id' ");
+            
         }
     }
 
