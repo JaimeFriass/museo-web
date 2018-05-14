@@ -248,7 +248,11 @@ header img {
     }
 
     .mensaje {
-        line-height: 0.3;
+        line-height: 0.2;
+    }
+
+    p.texto_men {
+        line-height: 0.8;
     }
 
     p.fecha_com {
@@ -800,6 +804,7 @@ a.boton {
         width: 100%;
         text-align: center;
         margin-top: 30px;
+        height: 200px;
     }
 
         div.lista_obras div.res_obra {
@@ -851,27 +856,66 @@ a.boton {
     /* comentarios*/
 
     div.conf_comentarios{
-        width: 50%;
+        width: 90%;
         margin: 30px;
-        margin-left: 25%;
         margin-top: 60px;
-        text-align: center;
+        height: 100%; 
+    }
+
+        div.conf_comentarios h2 {
+            text-align: center;
+        }
+
+        div.conf_comentarios p {
+            margin-bottom: 10px;
+        }
+
+        div.conf_comentarios div.comentario_panel, div.conf_comentarios form.confirmar_com {
+            border: solid black 1px;
+            float:left;
+            width: 100%;
+        }
+
+    div.comentario_panel {
+        padding: 5px;
     }
     
-    div.mostrarComent{
-        
-        margin-top: 10 px;
-        text-align: center;
+    div.comentario_panel form, div.comentario_panel div {
+        float:left;
+        margin: 5px;    
     }
-    div.mostrarComent table td id:com{
-            margin-left: 10 px;
+
+    div.nombre_com {
+        width: 18%;
+        float: left;
+        font-weight: bold;
     }
-    div.mostratComent div.texto{
-        margin-top: 5px;
-        margin-left: 5px;
+
+    div.comentario {
+        width: 65%;
+        float: left;
     }
 
 
+    button[type=submit] {
+        background-color: transparent;
+        border: none;
+        margin: 0px;
+        float: left;
+        color: black;
+        font-size: 12pt;
+    }
+
+    button[type=submit]:hover {
+        color: rgb(140, 140, 140);
+    }
+
+    form.confirmar_com input[type=text] {
+        width: 70%;
+        background: none;
+        border: none;
+        color: black;
+    }
 
 
     /*cerrar sesion*/

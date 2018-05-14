@@ -10,21 +10,28 @@
                     while($array_resultado =  mysqli_fetch_assoc($resultado_comentarios)) {
                         echo "<div class='mensaje'><p class='nombre_com'><b>".$array_resultado['nom_com']."</b></p>";
                         echo "<p class='fecha_com'>".$array_resultado['fecha']."</p>";
-                        echo "<p>".$array_resultado['texto_com']."</p></div>";
+                        echo "<p class='texto_men'>".$array_resultado['texto_com']."</p></div>";
                     }
                 }
+
+                if (isset($error_comentario)) {
+                    echo $error_comentario;
+                }
             ?>
+
         </div>
         
         <?php if (isset($_SESSION['tipo'])) { ?>
-            <form name="comentar" class="escribir" onsubmit="return validarForm()">
+            <form name="comentar" class="escribir" method="POST" action="obra.php?id=<?php echo $id_obra; ?>">
                 <input type="hidden" name="fecha" value="CURRENT_TIMESTAMP()">
-                <input type="text" name="nombre" class="nombre" placeholder="Nombre">
-                <input type="text" name="e-mail" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
-                <input required="true" name="mensaje" class="texto_comentario" type="text" placeholder="Comentario">
-                <input type="submit" value="Enviar">
+                <input type="text" name="nom_com" class="nombre" placeholder="Nombre">
+                <input type="text" name="email" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
+                <input required="true" name="texto_com" class="texto_comentario" type="text" placeholder="Comentario">
+                <input type="submit" value="Enviar" name="submit_comentario">
             </form>
-        <?php } ?>
+        <?php } 
+
+        ?>
     </div>
 
     <script>

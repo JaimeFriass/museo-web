@@ -55,10 +55,15 @@
             switch ($this->tipo_usuario) {
                 case 4:
                     $this->mostrarRoles();
+                    $this->mostrarConfComentarios();
+                    $this->mostrarConfObras();
+                    break;
                 case 3:
                     $this->mostrarConfObras();
+                    break;
                 case 2 :
                     $this->mostrarConfComentarios();
+                    $this->mostrarConfObras();
                     break;
             }
         }
@@ -156,36 +161,32 @@
                         echo "<td><a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt'></i></a></td>";
                     echo "</tr>";
                 }
+            } else {
+                echo "<tr><td><i class='fa fa-times'></i> No se han encontrado obras con ese nombre.</td></tr>";
             }
             echo "</table></div><br><hr>";
         }
 
-    
-
-
-            
         function mostrarComentarios() {
                 $res = mysqli_query( $this->conexion, "SELECT * FROM comentarios LIMIT 16 ");
     
                 if ($res->num_rows > 0) {
                     while ($a_res = mysqli_fetch_assoc($res)) {
-                            echo "<div class = 'mostrarComent'>";
+                            echo "<div class = 'comentario_panel'>";
                             
-                            echo "<td>".$a_res['nom_com']."</td>";
-                            echo "<li>".$a_res['texto_com']." </li>";
+                            echo "<div class='nombre_com'>".$a_res['nom_com']."</div>";
+                            echo "<div class='comentario'>".$a_res['texto_com']." </div>";
                            
-
-                            echo "<form class='herramientas' action='panel.php#coments' method='POST' >";
-                                echo "<input type='submit'name='submit_borrar' value='borrar'>";
-                                echo "<input type='hidden'name='submit_id' value='".$a_res['id_com']."'>";
-
-                            echo "</form>";
-
-                            echo "<form class='herramientas' action='panel.php#coments' method='POST'>";
-                                echo "<input type='submit' name='submit_editar' value='editar'>";
+                            echo "<form id='form_editar_com' action='panel.php#coments' method='POST'>";
+                                echo "<button class='editar_com' type='submit' name='submit_editar'><i class='fa fa-pencil-alt'></i></button>";
                                 echo "<input type='hidden'name='submit_id' value='".$a_res['id_com']."'>";
                             echo "</form>";
-                            
+
+                            echo "<form id='form_borrar_com' action='panel.php#coments' method='POST'>";
+                                echo "<button class='borrar_com' type='submit' name='submit_borrar'><i class='fa fa-times-circle'></i></button>";
+                                echo "<input type='hidden' name='submit_id' value='".$a_res['id_com']."'>";
+                            echo "</form>";
+
                             echo "</div>";
                     
                     }
@@ -196,29 +197,32 @@
             
             $res = mysqli_query( $this->conexion, "DELETE FROM comentarios WHERE id_com = ".$id);
             if($res == true)
-                echo "<p>borrado</p>";
+                echo "<p class='success'><i class='fa fa-check'></i> Comentario borrado con éxito</p>";
             else
-                echo "<p>NO ESTA BOORADO BOLUDO PELOTUDO</p>";
+                echo "<p class='error'>NO ESTA BOORADO BOLUDO PELOTUDO</p>";
         }
 
         function mostrar_editar_comentario($id){
-            echo "<form action='panel.php#coments' method='POST'>";
-            echo "<input type= 'text' name = 'nuevo'/>";
-            echo "<input type = 'submit' name = 'submit_editar_post' value='confirmar'>";
-            echo "<input type = 'hidden' name = 'submit_id' value='".$id."'>";
+            $res = mysqli_query( $this->conexion, "SELECT texto_com FROM comentarios WHERE id_com = ".$id);
+            $a_res = mysqli_fetch_assoc($res);
+
+            echo "<form class='confirmar_com' action='panel.php#coments' method='POST'>";
+                echo "<input type= 'text' name='nuevo' value='".$a_res['texto_com']."'>";
+                echo "<button type = 'submit' name = 'submit_editar_post'>Confirmar</button>";
+                echo "<input type = 'hidden' name = 'submit_id' value='".$id."'>";
             echo "</form>";
             
         }
 
         function editar_comentario($id,$comentario){
-            $com_edit = $comentario . " .Mensaje editado por el moderador";
+            $com_edit = $comentario . " | Mensaje editado por el moderador";
 
             $res = mysqli_query( $this->conexion, "UPDATE comentarios set texto_com = '$com_edit' WHERE id_com = ".$id);
 
             if($res == true)
-                echo "<p>EDITADO</p>";
+                echo "<p class='success'><i class='fa fa-check'></i> Comentario editado con éxito.</p>";
             else
-                echo "<p>NO ESTA EDITADO BOLUDO PELOTUDO</p>";
+                echo "<p class='error'>Error al editar el comentario.</p>";
         }
     }
 

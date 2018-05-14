@@ -1,24 +1,25 @@
 <div id="coments" class="conf_comentarios">
-    <h2>Configuración de comentarios</h2>
+    <h2><i class='fa fa-pencil-alt'></i> Configuración de comentarios</h2>
     
     <?php
     if(isset($_POST['submit_editar_post'])){
         $this->editar_comentario($_POST['submit_id'],$_POST['nuevo']);
     }
 
-     $this->mostrarComentarios();
-
-
-
-    if(isset($_POST['submit_editar'])){
-        $this->mostrar_editar_comentario($_POST['submit_id']);
-
-    }
-
-
     if(isset($_POST['submit_borrar'])){
         $this->borrar_comentario($_POST['submit_id']);
     }
+
+    if(isset($_POST['submit_editar'])){
+        $this->mostrar_editar_comentario($_POST['submit_id']);
+    }
+
+    $this->mostrarComentarios();
+
+
+
+
+
     ?>
     <!--<div class="borrar_comentario">
         <h4>Borra comentario</h4>

@@ -2,7 +2,22 @@
 include "modules/conexion.php";
 $id_obra = $_GET["id"];
 $seleccion_datos = "SELECT  *  FROM obras WHERE id = ".$id_obra ; //sentencia en sql
-$seleccion_comentarios = "SELECT * FROM comentarios WHERE obra_com = ".$id_obra;
+
+// Extrae los 4 ultimos comentarios de la obra
+$seleccion_comentarios = "SELECT * FROM (SELECT * FROM comentarios WHERE obra_com = ".$id_obra."
+                            ORDER BY id_com DESC LIMIT 4) AS alias ORDER BY id_com";
+
+if ( isset($_POST['submit_comentario'])) {
+    $envio_comentario = "INSERT INTO comentarios(nom_com, texto_com, correo, fecha, obra_com)
+    VALUES ('".$_POST['nom_com']."','".$_POST['texto_com']."','".$_POST['email']."',
+            CURRENT_DATE,".$_GET['id'].")";
+
+    $resultado_enviar = mysqli_query ($conexion, $envio_comentario);
+
+    if (!$resultado_enviar) {
+        $error_comentario = $envio_comentario;
+    }
+}
 
 if (!($resultado_datos = mysqli_query ($conexion, $seleccion_datos))) {   //ejecuta la sentencia y devuelve un resultado
     echo "Falló el query";

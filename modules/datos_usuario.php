@@ -36,12 +36,12 @@
     <div class="panel nuevo_correo">
         <h4><i class="fa fa-envelope "></i> Cambiar correo</h4>
         <form method="post" action="panel.php">
-            <input type="text" name="correo" placeholder="Nuevo correo">   
+            <input type="text" name="email" placeholder="Nuevo correo">   
             <input type="submit" name="actualizarcorreo" value="Cambiar">
         </form>
 
        <?php if ( isset($_POST['actualizarcorreo']) ) {
-            $this->actualizarCorreo($_SESSION['id'], $_POST['correo']);
+            $this->actualizarCorreo($_SESSION['id'], $_POST['email']);
         }
         ?>
     </div>

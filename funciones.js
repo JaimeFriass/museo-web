@@ -117,11 +117,9 @@ function validarForm() {
   //otra opcion 
   //<input type="hidden" name="aa" value="xx" >en el html*/
 
-  if($_SESSION['tipo'] > 0 && isset($_SESSION)){ //si está iniciaada una sesion y es un usuario registrado
-    //usuario resgistrado 
-    var nombre = $_SESSION['nombre'] ;
-    var email = $_SESSION['correo'] ;
-    var comentario  = document.forms["comentar"]["mensaje"].value;
+    var nombre = document.forms["comentar"]["nom_com"];
+    var email = document.forms["comentar"]["email"];
+    var comentario  = document.forms["comentar"]["texto_com"].value;
   
     // Si esta correcto el comentario se envia
     var fecha = new Date();
@@ -137,6 +135,6 @@ function validarForm() {
     contenedor.innerHTML += "<div class='mensaje'><p class='nombre_com'><b>"+nombre+"</b></p><p class='fecha_com' >"
                             +fecha_form +"</p><p>"+comentario+"</p></div>";
 
-  }
+
   return false; // Para que no se actualice la pagina actual
 }
