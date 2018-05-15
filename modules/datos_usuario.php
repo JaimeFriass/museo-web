@@ -25,14 +25,14 @@
     </div>
     <div class="panel nueva_pass">
         <h4><i class="fa fa-key"></i> Cambiar contraseña</h4>
-        <form>
-            <input type="password" name="vieja_pass" placeholder="Antigua contraseña">
-            <input type="password" name="nueva_pass" placeholder="Nueva contraseña">
-            <input type="password" name="nueva_pass2" placeholder="Confirmar contraseña">    
-            <input type="submit" name="CambiarPass" value="Cambiar">
+        <form method="POST" action="panel.php">
+            <input required type="password" name="vieja_pass" placeholder="Antigua contraseña">
+            <input required type="password" name="nueva_pass" placeholder="Nueva contraseña">
+            <input required type="password" name="nueva_pass2" placeholder="Confirmar contraseña">    
+            <input type="submit" name="actualizarpass" value="Cambiar">
         </form>
-        <?php if( isset($_POST['CambiarPass']) ) {
-            $this->actualizarPass($_SESSION['id'],$_POST['vieja_pass'],$_POST['nueva_pass'],$_POST['nueva_pass2']);
+        <?php if( isset($_POST['actualizarpass']) ) {
+            $this->actualizarPass($_SESSION['id'], $_POST['vieja_pass'], $_POST['nueva_pass'], $_POST['nueva_pass2']);
         }
         ?>
     </div>

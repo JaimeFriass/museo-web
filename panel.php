@@ -129,22 +129,23 @@
 
         // Actualiza la contraseña de $id comprobando que coincide $pass_ant
         // con la anterior.
-        function actualizarPass($id,$vieja_pass,$nueva_pass,$nueva_pass2){
+        function actualizarPass($id, $vieja_pass, $nueva_pass, $nueva_pass2){
             if($nueva_pass == $nueva_pass2){
-                $comp =  mysqli_query($this->conexion, "SELECT pass FROM usuarios WHERE pass LIKE '%".$vieja_pass."%' and 'id='".$id);
+                $comp =  mysqli_query($this->conexion, "SELECT pass FROM usuarios WHERE pass='".$vieja_pass."' AND id=".$id);
+
                 if($comp->num_rows > 0 ){
                     $res = mysqli_query ($this->conexion, "UPDATE usuarios SET pass='".$nueva_pass."' WHERE id=".$id);
                     if ($res)
-                        echo "Contraseña actualizada correctamente.";
+                        echo "<p class='success'><i class='fa fa-check'></i> Contraseña actualizada correctamente.</p>";
                     else
-                        echo "Error al actualizar la contraseña";
+                        echo "<p class='error'><i class='fa fa-times'></i> Error al actualizar la contraseña</p>";
                 }
                 else{
-                    echo "Contraseña antigua incorrecta";
+                    echo "<p class='error'><i class='fa fa-times'></i>  Contraseña antigua incorrecta</p>";
                 }
-            }
+            } 
             else{
-                echo"no coinciden las contraseñas";
+                echo"<p class='error'><i class='fa fa-times'></i>  No coinciden las contraseña<p>s";
             }
             
         }

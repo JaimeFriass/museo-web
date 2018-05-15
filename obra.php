@@ -9,6 +9,7 @@ $seleccion_comentarios = "SELECT * FROM (SELECT * FROM comentarios WHERE obra_co
 
 if ( isset($_POST['submit_comentario'])) {
     if(isset($_SESSION['id'])){
+        
         $res = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE id=".$_SESSION['id'] );
         $a_res = mysqli_fetch_assoc($res);
         $nombre = $a_res['nombre'];

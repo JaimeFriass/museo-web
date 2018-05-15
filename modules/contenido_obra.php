@@ -24,8 +24,6 @@
         <?php if (isset($_SESSION['tipo'])) { ?>
             <form name="comentar" class="escribir" method="POST" action="obra.php?id=<?php echo $id_obra; ?>">
                 <input type="hidden" name="fecha" value="CURRENT_TIMESTAMP()">
-                <input type="text" name="nom_com" class="nombre" placeholder="Nombre">
-                <input type="text" name="email" class="nombre" placeholder="E-mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$">
                 <input required="true" name="texto_com" class="texto_comentario" type="text" placeholder="Comentario">
                 <input type="submit" value="Enviar" name="submit_comentario">
             </form>
