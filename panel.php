@@ -112,11 +112,6 @@
             }
         }
 
-        // Actualiza la contraseña de $id comprobando que coincide $pass_ant
-        // con la anterior.
-        function actualizarContra($id, $pass_ant, $pass_nueva) {
-
-        }
 
         // Actualiza el correo de $id
         function actualizarCorreo($id, $email) {
@@ -131,6 +126,29 @@
                 echo "Correo activo. Prueba otro.";  
             }
         }
+
+        // Actualiza la contraseña de $id comprobando que coincide $pass_ant
+        // con la anterior.
+        function actualizarPass($id,$vieja_pass,$nueva_pass,$nueva_pass2){
+            if($nueva_pass == $nueva_pass2){
+                $comp =  mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE id='".$id."' and pass= '".$vieja_pass."'");
+                if($comp->num_rows > 0){
+                    $res = mysqli_query ($this->conexion, "UPDATE usuarios SET pass='".$nueva_pass."' WHERE id=".$id);
+                    if ($res)
+                        echo "Contraseña actualizada correctamente.";
+                    else
+                        echo "Error al actualizar la contraseña";
+                }
+                else{
+                    echo "Contraseña antigua incorrecta";
+                }
+            }
+            else{
+                echo"no coinciden las contraseñas";
+            }
+            
+        }
+
 
         // Muestra todas las obras, en secciones de 16 obras
         function mostrarObras($div) {

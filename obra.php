@@ -8,15 +8,26 @@ $seleccion_comentarios = "SELECT * FROM (SELECT * FROM comentarios WHERE obra_co
                             ORDER BY id_com DESC LIMIT 4) AS alias ORDER BY id_com";
 
 if ( isset($_POST['submit_comentario'])) {
-    $envio_comentario = "INSERT INTO comentarios(nom_com, texto_com, correo, fecha, obra_com)
-    VALUES ('".$_POST['nom_com']."','".$_POST['texto_com']."','".$_POST['email']."',
+    if(isset($_SESSION['id'])){
+        $res = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE id=".$_SESSION['id'] );
+        $a_res = mysqli_fetch_assoc($res);
+        $nombre = $a_res['nombre'];
+        $email = $a_res['email'];
+
+        $envio_comentario = "INSERT INTO comentarios(nom_com, texto_com, correo, fecha, obra_com)
+        VALUES ('".$a_res['nombre']."','".$_POST['texto_com']."','".$a_res['email']."',
             CURRENT_DATE,".$_GET['id'].")";
 
-    $resultado_enviar = mysqli_query ($conexion, $envio_comentario);
+        $resultado_enviar = mysqli_query ($conexion, $envio_comentario);
 
-    if (!$resultado_enviar) {
-        $error_comentario = $envio_comentario;
+        if (!$resultado_enviar) {
+            $error_comentario = $envio_comentario;
+        }
     }
+    else{
+        echo "<p>'Fallo en la variable de sesion'</p>";
+    }
+    
 }
 
 if (!($resultado_datos = mysqli_query ($conexion, $seleccion_datos))) {   //ejecuta la sentencia y devuelve un resultado

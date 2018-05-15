@@ -136,5 +136,6 @@ function validarForm() {
                             +fecha_form +"</p><p>"+comentario+"</p></div>";
 
 
+
   return false; // Para que no se actualice la pagina actual
 }

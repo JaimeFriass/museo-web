@@ -29,8 +29,12 @@
             <input type="password" name="vieja_pass" placeholder="Antigua contraseña">
             <input type="password" name="nueva_pass" placeholder="Nueva contraseña">
             <input type="password" name="nueva_pass2" placeholder="Confirmar contraseña">    
-            <input type="submit" value="Cambiar">
+            <input type="submit" name="CambiarPass" value="Cambiar">
         </form>
+        <?php if( isset($_POST['CambiarPass']) ) {
+            $this->actualizarPass($_SESSION['id'],$_POST['vieja_pass'],$_POST['nueva_pass'],$_POST['nueva_pass2']);
+        }
+        ?>
     </div>
 
     <div class="panel nuevo_correo">
