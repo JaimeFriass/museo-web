@@ -131,8 +131,8 @@
         // con la anterior.
         function actualizarPass($id,$vieja_pass,$nueva_pass,$nueva_pass2){
             if($nueva_pass == $nueva_pass2){
-                $comp =  mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE id='".$id."' and pass= '".$vieja_pass."'");
-                if($comp->num_rows > 0){
+                $comp =  mysqli_query($this->conexion, "SELECT pass FROM usuarios WHERE pass LIKE '%".$vieja_pass."%' and 'id='".$id);
+                if($comp->num_rows > 0 ){
                     $res = mysqli_query ($this->conexion, "UPDATE usuarios SET pass='".$nueva_pass."' WHERE id=".$id);
                     if ($res)
                         echo "Contraseña actualizada correctamente.";
