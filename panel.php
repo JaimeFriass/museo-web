@@ -60,9 +60,9 @@
                     break;
                 case 3:
                     $this->mostrarConfObras();
+                    $this->mostrarConfComentarios();
                     break;
                 case 2 :
-                    $this->mostrarConfComentarios();
                     $this->mostrarConfObras();
                     break;
             }
