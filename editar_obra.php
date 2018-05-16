@@ -5,6 +5,7 @@
     }
 
     $titulo_pag = "Editar obra";
+    $menu_activo = 0;
 
     include "modules/head.php";
     include "modules/header.php";

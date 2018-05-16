@@ -20,6 +20,7 @@
         </form>
         <?php if ( isset($_POST['actualizarnombre']) ) {
             $this->actualizarNombre($_POST['id_nombre'], $_POST['nuevo_nombre']);
+            header("Location: panel.php");
         }
         ?>
     </div>
@@ -46,6 +47,7 @@
 
        <?php if ( isset($_POST['actualizarcorreo']) ) {
             $this->actualizarCorreo($_SESSION['id'], $_POST['email']);
+            header("Location: panel.php");
         }
         ?>
     </div>
