@@ -16,11 +16,14 @@ include "modules/header.php";
 
 ?>
 <body>
-    <article>
+    <article class='colecciones'>
+        
         <?php // Si se le pasa una colección se muestran los datos y obras de esta
         if (isset($_GET['id'])) { $array_resultado =  mysqli_fetch_assoc($resultado_col); ?>
             <h1><?php echo $array_resultado['nombre']; ?></h1>
+            <a class="volver" href="coleccion.php"> <i class="fa fa-chevron-circle-left fa-2x"></i></a>
             <p><?php echo $array_resultado['descripcion']; ?></p>
+            
             <?php
                 if ($resultado_obras->num_rows > 0) {
                     while($array_resultado =  mysqli_fetch_assoc($resultado_obras)) {

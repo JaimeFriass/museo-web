@@ -183,7 +183,6 @@ header img {
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 color: white;
-                transition: 0.5s;
             }
 
                 .menu li a:hover {
@@ -476,6 +475,7 @@ header img {
         clear: both;
     }
 
+
     /***************************************/
     /*                OBRA                 */
     /***************************************/
@@ -638,6 +638,17 @@ a.boton {
         background-color: rgb(219, 247, 255);
     }
 
+    
+    article.colecciones {
+        width: 60%;
+        margin-left: 15%;
+        float: none;
+    }
+
+    article.colecciones a.volver svg {
+        margin-top: -70px;
+    }
+
     /***************************************/
     /*             PANEL                   */
     /***************************************/
@@ -696,13 +707,21 @@ a.boton {
             margin: 5px;
         }
     }
-    form.buscar_usuario input[type=text] {
+    form.buscar input[type=text] {
         width: 30%;
         margin: 5px;
     }
 
-    form.buscar_usuario input[type=submit] {
+    form.buscar input[type=submit] {
         width: 30%;
+    }
+
+    div.busqueda {
+        width: 55%;
+        margin: 30px;
+        margin-left: 25%;
+        text-align: center;
+       
     }
 
     div.resultado_usuarios {

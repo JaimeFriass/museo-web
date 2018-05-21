@@ -87,6 +87,8 @@
                     echo "</td></tr></table></div>";
                     echo "</form>";
                 }
+            } else {
+                echo "<p class='error'><i class='fa fa-times'></i> No se han encontrado usuarios con ese nombre. </p>";
             }
         }
 
@@ -95,7 +97,7 @@
             if ($res) {
                 echo "Rol actualizado correctamente!";
             } else {
-                echo "Error al actualizar el rol";
+                echo "<p class='error'><i class='fa fa-times'></i> Error al actualizar el rol </p>";
             }
         }
 
@@ -108,7 +110,7 @@
                 else
                     echo "Error al actualizar el nombre";
             } else {
-                echo "Nombre de usuario ya registrado. Prueba otro.";  
+                echo "<p class='error'><i class='fa fa-times'></i> Nombre de usuario ya registrado. Prueba otro. </p>";  
             }
         }
 
@@ -121,7 +123,7 @@
                 if ($res)
                     echo "Correo actualizado correctamente.";
                 else
-                    echo "Error al actualizar el correo";
+                    echo "<p class='error'><i class='fa fa-times'></i> Error al actualizar el correo </p>";
             } else {
                 echo "Correo activo. Prueba otro.";  
             }
@@ -145,7 +147,7 @@
                 }
             } 
             else{
-                echo"<p class='error'><i class='fa fa-times'></i>  No coinciden las contraseña<p>s";
+                echo"<p class='error'><i class='fa fa-times'></i>  No coinciden las contraseñas<p>";
             }
             
         }
@@ -181,7 +183,7 @@
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td><i class='fa fa-times'></i> No se han encontrado obras con ese nombre.</td></tr>";
+                echo "<tr><td><p class='error'><i class='fa fa-times'></i> No se han encontrado obras con ese nombre.</p></td></tr>";
             }
             echo "</table></div><br><hr>";
         }
@@ -212,13 +214,39 @@
                 }
         }
 
+        function buscarComentario($texto) {
+            $res = mysqli_query ($this->conexion, "SELECT * FROM comentarios WHERE texto_com LIKE '%".$texto."%'");
+            if ($res->num_rows > 0) {
+                while($a_res =  mysqli_fetch_assoc($res)) {
+                    echo "<div class = 'comentario_panel'>";
+                            
+                    echo "<div class='nombre_com'>".$a_res['nom_com']."</div>";
+                    echo "<div class='comentario'>".$a_res['texto_com']." </div>";
+                   
+                    echo "<form id='form_editar_com' action='panel.php#coments' method='POST'>";
+                        echo "<button class='editar_com' type='submit' name='submit_editar'><i class='fa fa-pencil-alt'></i></button>";
+                        echo "<input type='hidden'name='submit_id' value='".$a_res['id_com']."'>";
+                    echo "</form>";
+
+                    echo "<form id='form_borrar_com' action='panel.php#coments' method='POST'>";
+                        echo "<button class='borrar_com' type='submit' name='submit_borrar'><i class='fa fa-times-circle'></i></button>";
+                        echo "<input type='hidden' name='submit_id' value='".$a_res['id_com']."'>";
+                    echo "</form>";
+
+                    echo "</div>";
+                }
+            } else {
+                echo "<p class='error'><i class='fa fa-times'></i> No se han encontrado comentarios con ese texto.</p>";
+            }
+        }
+
         function borrar_comentario($id){
             
             $res = mysqli_query( $this->conexion, "DELETE FROM comentarios WHERE id_com = ".$id);
             if($res == true)
                 echo "<p class='success'><i class='fa fa-check'></i> Comentario borrado con éxito</p>";
             else
-                echo "<p class='error'>NO ESTA BOORADO BOLUDO PELOTUDO</p>";
+                echo "<p class='error'>Error al eliminar el comentario seleccionado.</p>";
         }
 
         function mostrar_editar_comentario($id){
