@@ -2,7 +2,7 @@
 
 <?php
 include("conexion.php");
-$q = $_GET['q'];
+$q = $_GET['q']; //q es lo que está escribiendo
 echo $q."<br>";
 
 $res = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE nombre LIKE '%".$q."%'");
