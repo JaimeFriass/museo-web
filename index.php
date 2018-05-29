@@ -68,6 +68,8 @@
                             document.getElementById("muestra_obras").innerHTML = this.responseText;
                         }
                     };
+
+                    
                     // Se envia con GET la cadena a buscar en la BD
                     xmlhttp.open("GET","modules/buscarobra.php?q=" + str, true);
                     // Se muestra
@@ -76,10 +78,7 @@
 
             }
         </script>
-        <form id = "resultobra">
-            <input id = "buscamosobra" oninput="buscaObra(this.value)"  type = "text" name = "busquedaobra" placeholder = "busca obra">
-            <div id="muestra_obras"></div>
-        </form>
+
         
 
         <h1>Galería</h1>

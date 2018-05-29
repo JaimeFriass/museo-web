@@ -61,14 +61,9 @@ mysqli_close($conexion);
     include "modules/head.php";
 ?>
 <body>
-     
     <?php $menu_activo = 2; include "modules/header.php";
-
     include "modules/contenido_obra.php";
-
     include "modules/footer.php"; ?>
-
-
 </body>
 
 </html>

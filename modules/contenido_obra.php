@@ -20,6 +20,20 @@
             ?>
 
         </div>
+
+        <script>
+            function mostrarCom() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("lista_comentarios").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("POST", "ajax/actualiza_com.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("id_obra=".$_GET['id']);
+            }
+        </script>
         
         <?php if (isset($_SESSION['tipo'])) { ?>
             <form name="comentar" class="escribir" method="POST" action="obra.php?id=<?php echo $id_obra; ?>">

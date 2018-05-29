@@ -138,7 +138,51 @@ header img {
     }
 }
 
+#muestra_obras {
+    position: absolute;
+    top: 200px;
+    right: 100px;
+    width: 200px;
+    border-bottom: solid black 1px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    margin: 0px;     
+    z-index: 999;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
+#muestra_obras datalist {
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: blue;
+}
+
+#muestra_obras a {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 3px;
+    background-color: white;
+    z-index: 999;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+#buscamosobra {
+    width: 26%;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+}
+
+
+#muestra_obras a:hover {
+    background-color: rgb(163, 212, 255);
+
+}
 
 
     .menu {
