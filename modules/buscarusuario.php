@@ -1,5 +1,3 @@
-
-
 <?php
 include("conexion.php");
 $q = $_GET['q']; //q es lo que está escribiendo
