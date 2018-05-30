@@ -166,12 +166,12 @@
                         echo "<img src='".$a_res['imagen']."' width=100 height=150>";
                         echo "<form class='herramientas'>";
                             echo "<a href='modules/eliminar_obra.php?id=".$a_res['id']."'><i class='fa fa-times-circle'></i></a>";
+                            echo "<a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt'></i></a> ";
                             if ($a_res['visible'] == 1) {
                                 echo "<a href= 'modules/CambiarVisible.php?id=".$a_res['id']."&v=1'><i class='fas fa-eye'></i></a>";    
                             } else {
                                 echo "<a href= 'modules/CambiarVisible.php?id=".$a_res['id']."&v=0'><i style='color: gray' class='fas fa-eye'></i></a>";
                             }
-                            echo "<a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt'></i></a>";
                             
                         echo "</form>";
                     echo "</div>";

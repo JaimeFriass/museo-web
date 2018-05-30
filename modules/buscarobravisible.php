@@ -11,11 +11,14 @@ if ($res->num_rows > 0) {
         echo "<input type='hidden' name='id_obra' value='".$a_res['id']."'>";
         echo "<div class='resultado_obras'><table><tr>";
             echo "<td>".$a_res['Nombre']."<td>";
-            echo "<div class='obras'><select name='visible'>
-                <option value='0'><i class='fa fa-user'></i> Oculto</option>
-                <option value='1'>Visible</option>
-            </select></div></td><td>";
-        echo "<input type='submit' value='Actualizar' name='actualizarVisible'>";
+            echo "<a href='modules/eliminar_obra.php?id=".$a_res['id']."'><i class='fa fa-times-circle'></i></a> ";
+            echo "<a href='editar_obra.php?id=".$a_res['id']."'><i class='fa fa-pencil-alt'></i></a> ";
+            if ($a_res['visible'] == 1) {
+                echo " <a href= 'modules/CambiarVisible.php?id=".$a_res['id']."&v=1'><i class='fas fa-eye'></i></a>";    
+            } else {
+                echo " <a href= 'modules/CambiarVisible.php?id=".$a_res['id']."&v=0'><i style='color: gray' class='fas fa-eye'></i></a>";
+            }
+
         echo "</td></tr></table></div>";
         echo "</form>";
     }
