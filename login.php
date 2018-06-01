@@ -1,4 +1,5 @@
 <?php
+$titulo_pag = "Iniciar sesión";
 include "modules/conexion.php";
 include "modules/head.php";
 $menu_activo = 10;
@@ -75,7 +76,7 @@ if ( isset($_SESSION['id']) ) {
 
     <div class="container_login">
         <form class="login" action="login.php" method="post">
-            <h2>Iniciar sesión</h2>
+            <h2><i class="fa fa-user"></i> Iniciar sesión</h2>
             <input type="text" name="name" placeholder="Usuario">
             <?php echo $nameErr; ?>
 

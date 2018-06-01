@@ -29,8 +29,6 @@
                <input name="enviar" type="submit" value=" Enviar ">
             </form>*/
             echo "<a href=\"contenido_obra.php?array=$array_env\">pasar array</a>";
-            
-
         }
         else
             echo "ERROR: 404 página no encontrada, id incorrecto";
@@ -38,49 +36,14 @@
     // Si no se le ha pasado un id de una obra en la URL se muestra la página por defecto
     } else {
         $menu_activo = 1;
-        
         $titulo_pag = "Portada";
         $resultado_exp   = mysqli_query ($conexion, "SELECT * FROM exposiciones");
         $resultado_obras = mysqli_query ($conexion, "SELECT * FROM obras");
         include "modules/header.php";
         include "modules/head.php";
 ?>
-
 <body>
     <article>
-        <script>
-            function buscaObra(str){
-                 // Si no se escribe nada no se muestra nada de resultado.
-                if (str == "") {
-                    document.getElementById("muestra_obras").innerHTML = "";
-                    return;
-                } 
-                else {
-                    if (window.XMLHttpRequest) {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
-                    } else {
-                        // code for IE6, IE5
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-                    xmlhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("muestra_obras").innerHTML = this.responseText;
-                        }
-                    };
-
-                    
-                    // Se envia con GET la cadena a buscar en la BD
-                    xmlhttp.open("GET","modules/buscarobra.php?q=" + str, true);
-                    // Se muestra
-                    xmlhttp.send();
-                }
-
-            }
-        </script>
-
-        
-
         <h1>Galería</h1>
         <?php
             if ($resultado_obras->num_rows > 0) {
@@ -93,8 +56,6 @@
 
         ?>
     </article>
-
-
     <aside>
         <h2>Próximas exposiciones</h2>
         <ul>
@@ -110,11 +71,8 @@
             ?>
         </ul>
     </aside>
-
     <?php include "modules/footer.php"; ?>
-
 </body>
-
 <?php
 // Cerramos el corchete del inicio de la página
 } 

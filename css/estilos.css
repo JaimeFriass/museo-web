@@ -14,6 +14,33 @@ article h1 {
     text-shadow: 2px 2px 1px #dddddd;
 }
 
+input {
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 13pt;
+}
+
+input[type=submit] {
+    text-decoration: none;
+    font-size: 15pt;
+    height: 35px;
+    padding: 5px 20px 5px 20px;
+    background-color: #2AB9E7;
+    text-shadow: 1px 1px gray;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+
+input[type=text] {
+    width: 90%;
+}
+
 /* HEADER */
 
 div.cover {
@@ -257,114 +284,6 @@ header img {
         background-color: white;
     }
 
-    .comentarios {
-        position: fixed;
-        bottom: 20px;
-        right: -300px;
-        border-radius: 4px;
-        height: 340px;
-        width: 300px;
-        background-color:rgba(161, 218, 236, 0.9);
-        border: solid black 1px;
-        padding: 10px 10px 10px 10px;
-    }
-
-    #icono_boton {
-        margin-top: 11px;
-        margin-left: 11px;
-    }
-
-    .header_comentarios {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 18pt;
-        color: black;
-        font-family: 'bebas', sans-serif;
-        border-bottom: solid black 1px;
-    }
-
-    .cerrar {
-        text-align: right;
-        margin-top: -30px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-
-    .mensaje {
-        line-height: 0.2;
-    }
-
-    p.texto_men {
-        line-height: 0.8;
-    }
-
-    p.fecha_com {
-        text-align: right;
-        margin-top: -23px;
-        color: gray;
-        font-size: 10pt;
-    }
-
-    p.nombre_com {
-        font-family: 'bebas', sans-serif;
-        font-size: 12pt;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    input {
-        padding: 7px 7px;
-        margin: 2px 0;
-        box-sizing: border-box;
-        border-radius: 4px;
-        border: solid #ccc 1px;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;   
-        font-family: 'Raleway', sans-serif;
-        margin-top: 5px;
-    }
-
-    input:focus {
-        border: 1px solid #555;
-    }
-
-    input[type=submit] {
-        text-decoration: none;
-        padding: 5px 20px 5px 20px;
-        background-color: #2AB9E7;
-        text-shadow: 1px 1px gray;
-        color: white;
-        cursor: pointer;
-        width: 100%;
-    }
-
-    input[type=submit]:hover {
-        background-color: white;
-        color: black;
-    }
-
-    input.texto_comentario {
-        width: 100%;
-    }
-
-    input.nombre {
-        width: 49%;
-    }
-
-    div.container_comentarios {
-        height: 230px;
-    }
-    p.com {
-        line-height: 0.3;
-    }
-
-    form.escribir {
-        border-top: solid black 1px;
-        margin-bottom: 0px;
-        padding-top: 5px;
-    }
-
-
-
     /* ASIDE */
     aside {
         width: 17%;
@@ -579,6 +498,108 @@ header img {
         width: 100%;
         margin-left: -220px;
         margin-top: 270px;
+    }
+
+    /* COMENTARIOS */
+
+    form.escribir input{
+        font-size: 10pt;
+    }
+
+    .comentarios {
+        position: fixed;
+        bottom: 20px;
+        right: -300px;
+        border-radius: 4px;
+        height: 450px;
+        width: 65%;
+        background-color:rgba(161, 218, 236, 0.9);
+        border: solid black 1px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    #icono_boton {
+        margin-top: 11px;
+        margin-left: 11px;
+    }
+
+    .header_comentarios {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 18pt;
+        color: black;
+        font-family: 'bebas', sans-serif;
+        border-bottom: solid black 1px;
+    }
+
+    .cerrar {
+        text-align: right;
+        margin-top: -30px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .mensaje {
+        line-height: 0.2;
+    }
+
+    p.texto_men {
+        line-height: 0.8;
+        background-color: white;
+        padding: 7px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-left: -10px;
+    }
+
+    p.fecha_com {
+        text-align: right;
+        margin-top: -23px;
+        color: gray;
+        font-size: 10pt;
+    }
+
+    p.nombre_com {
+        font-family: 'bebas', sans-serif;
+        font-size: 12pt;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    input {
+        margin: 2px 0;
+        box-sizing: border-box;
+        border: solid #ccc 1px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;   
+        font-family: 'Raleway', sans-serif;
+        margin-top: 5px;
+    }
+
+    input:focus {
+        border: 1px solid #555;
+    }
+
+
+    input.texto_comentario {
+        width: 100%;
+    }
+    div.container_comentarios {
+        height: 310px;
+    }
+    p.com {
+        line-height: 0.3;
+    }
+
+    form.escribir {
+        border-top: solid black 1px;
+        margin-bottom: 0px;
+        padding-top: 5px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        div.comentarios {
+            width: 90%; 
+        }
     }
 
     /* Pantallas más pequeñas, se muestra todo en una columna */
@@ -811,6 +832,11 @@ a.boton {
             width: 100%;
             margin-left: 0%;
         }
+
+        div.busqueda {
+            width: 100%;
+            margin-left: 0%;
+        }
     }
 
     /*  CONFIGURACION DE  OBRAS */
@@ -1003,26 +1029,28 @@ a.boton {
     /***************************************/
     div.container_login {
         margin: 20px 20px 20px 20px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-top: 60px;
+        margin-bottom: 120px;
         text-align: center;
-        width: 65%;
-        margin-left: 25%;
+        width: 40%;
+        margin-left: 29%;
+        background-color: azure;
+        border-radius: 35px;
+        box-shadow: #4d4d4d 2px 2px 5px;
     }
     form.login {
-        width: 50%;
+        width: 85%;
         padding: 20px 20px 20px 20px;
-        margin: 20px 20px 20px 20px;
+        margin: 15px 15px 15px 15px;
     }
 
     form.login input {
-        margin: 10px 10px 10px 10px;
-        height: 37px;
-        font-size: 13pt;
+        margin: 10px 10px 20px 10px;
+        padding: 20px 20px 20px 20px;
+        height: 43px;
+        border-radius: 30px;
     }
-    form.login input[type=text] {
-        width: 90%;
-    }
+
 
     form.login input[type=password] {
         width: 90%;
@@ -1030,9 +1058,21 @@ a.boton {
 
     form.login input[type=submit] {
         width: 90%;
-        height: 37px;
+        height: 45px;
+        padding: 10px;
+        
     }
     
+    @media only screen and (max-width: 800px) {
+        div.container_login {
+            width: 94%;
+            margin-left: 0%;
+            margin: 30px 15px 60px 15px;
+        }
+        form.login {
+            width: 85%;
+        }
+    }
     
     /***************************************/
     /*             EDICION                 */

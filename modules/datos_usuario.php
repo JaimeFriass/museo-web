@@ -14,7 +14,7 @@
     <div class="panel nuevo_nombre">
         <h4><i class="fa fa-font"></i> Cambiar nombre</h4>
         <form method="post" action="panel.php" >
-            <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre">    
+            <input type="text" name="nuevo_nombre" value="<?php echo $nombre; ?>">    
             <input type="hidden" name="id_nombre" value="<?php echo $_SESSION['id']; ?>">
             <input type="submit" name="actualizarnombre" value="Cambiar">
         </form>
