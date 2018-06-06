@@ -89,6 +89,10 @@ header img {
     z-index: 3;
 }
 
+.menu_bar {
+	display:none;
+}
+
 /* AJUSTES DEL HEADER PARA PANTALLAS MÁS PEQUEÑAS */
 /* Ordenadas de más grandes a pequeñas            */
 
@@ -142,11 +146,36 @@ header img {
 }
 
 @media only screen and (max-width: 500px) {
+    .menu_bar{
+        display:block;
+        width:100%;
+        background: #ccc;
+    }
+    
+    .menu_bar .bt-menu {
+		display:block;
+		padding:20px;
+		background:#024959;
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:25px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+    }
 
+    .menu_bar span {
+		float:right;
+		font-size:40px;
+	}
+    
+    
     div.cover {
         height: 156px;
     }
     header {
+        position:fixed;
         padding-top: 10px;
         height: 101px;
         margin: -25px -0px 0px -10px;
@@ -264,6 +293,14 @@ header img {
                 .menu li a.active {
                     background-color: white;
                     color: black;
+                }
+
+                .menu li icon {
+                    display : none;
+                }
+
+                .menu li .ham {
+                    display : none;
                 }
 
     .btn_comentarios {
@@ -422,6 +459,34 @@ header img {
 
         article h1 {
             margin-left: 5%;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .responsivo {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        article h1 {
+            margin-left: 5%;
+        }
+
+        .menu li .icon {
+            float: left;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .menu li .responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .menu li .ham {
+            display:block;
         }
     }
 

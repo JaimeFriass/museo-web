@@ -196,3 +196,12 @@ function buscaObra(str){
  }
 
 }
+
+function MenuHam() {
+  var x = document.getElementById("mymenu");
+  if (x.className === "menu") {
+      x.className += " responsive";
+  } else {
+      x.className = "menu";
+  }
+} 

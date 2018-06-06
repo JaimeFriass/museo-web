@@ -9,10 +9,16 @@
         
       </header>
 
-    <div class="menu">
 
+    <div class="menu" id= "mymenu">
 
         <ul>
+            <li class = "ham">            
+                <a href="javascript:void(0);" class="icon" onclick="MenuHam()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+
             <li ><a <?php if($menu_activo == 1) {?>class="active" <?php } ?> href="index.php">Inicio</a></li>
             <li><a <?php if($menu_activo == 2) {?>class="active" <?php } ?> href="">Obras</a></li>
             <li><a <?php if($menu_activo == 3) {?>class="active" <?php } ?> href="coleccion.php">Colecciones</a></li>
