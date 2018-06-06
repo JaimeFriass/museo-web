@@ -16,7 +16,7 @@
             <li ><a <?php if($menu_activo == 1) {?>class="active" <?php } ?> href="index.php">Inicio</a></li>
             <li><a <?php if($menu_activo == 2) {?>class="active" <?php } ?> href="">Obras</a></li>
             <li><a <?php if($menu_activo == 3) {?>class="active" <?php } ?> href="coleccion.php">Colecciones</a></li>
-            <li><a href="">Horarios</a></li>
+            <li><a <?php if($menu_activo == 4) {?>class="active" <?php } ?> href="horarios.php">Horarios</a></li>
             <li class="login"><a href="panel.php"><i class="fa fa-user"></i></a></li>
         </ul>
     </div>
