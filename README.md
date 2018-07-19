@@ -17,10 +17,10 @@ Prácticas de la asignatura Sistemas de Información basados en Web: Web del mus
 
 ![Captura 1](https://github.com/JaimeFriass/museo-web/blob/master/img/capt1.jpg "Página principal")
 
-![Captura 2](https://github.com/JaimeFriass/museo-web/blob/master/img/capt2.jpg "Sistema de usuarios")
+![Captura 2](https://github.com/JaimeFriass/museo-web/blob/master/img/capt2.png "Sistema de usuarios")
 
-![Captura 3](https://github.com/JaimeFriass/museo-web/blob/master/img/capt3.jpg "Comentarios en obras")
+![Captura 3](https://github.com/JaimeFriass/museo-web/blob/master/img/capt3.png "Comentarios en obras")
 
-![Captura 4](https://github.com/JaimeFriass/museo-web/blob/master/img/capt4.jpg "Panel de usuario")
+![Captura 4](https://github.com/JaimeFriass/museo-web/blob/master/img/capt4.png "Panel de usuario")
 
 ![Captura 5](https://github.com/JaimeFriass/museo-web/blob/master/img/capt5.jpg "Información de obras y búsqueda")
